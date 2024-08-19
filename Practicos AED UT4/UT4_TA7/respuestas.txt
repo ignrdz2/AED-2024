@@ -1,0 +1,85 @@
+1) 4
+2) 3
+3) 26
+4) 1
+5.1) 
+El algoritmo encuentraLinealUno(nombreAtributo, valorAtributo) busca un nodo en un árbol binario de búsqueda utilizando un atributo diferente al utilizado para construir el árbol. La búsqueda se realiza de manera secuencial, recorriendo el árbol de manera lineal.
+
+Precondiciones:
+-El árbol binario de búsqueda debe estar inicializado.
+-El nombre del atributo y el valor del atributo deben ser proporcionados como parámetros válidos.
+
+Postcondiciones:
+-El algoritmo devuelve verdadero si encuentra un nodo con el valor del atributo indicado, y falso en caso contrario.
+
+Algoritmo encuentraLinealUno(nombreAtributo, valorAtributo)
+    Si raiz es nulo
+        Devolver falso
+    Fin Si
+    
+    nodoActual <- raiz
+    
+    Mientras nodoActual no sea nulo
+        Si valorAtributo es igual al valor del atributo indicado en nodoActual
+            Devolver verdadero
+        Fin Si
+        
+        Si valorAtributo es menor que el valor del atributo indicado en nodoActual
+            nodoActual <- nodoActual.hijoIzquierdo
+        Sino
+            nodoActual <- nodoActual.hijoDerecho
+        Fin Si
+    Fin Mientras
+    
+    Devolver falso
+Fin Algoritmo
+
+
+Si el valor del atributo buscado está en el nodo de etiqueta igual a 1, se realizarán 2 comparaciones en total.
+
+5.2)
+Algoritmo encuentraLinealDos(nombreAtributo, valorAtributo)
+    Si raiz es nulo
+        Devolver falso
+    Fin Si
+    
+    nodoActual <- raiz
+    
+    Mientras nodoActual no sea nulo
+        Si valorAtributo es igual al valor del atributo indicado en nodoActual
+            Devolver verdadero
+        Fin Si
+        
+        Si valorAtributo es menor que el valor del atributo indicado en nodoActual
+            nodoActual <- nodoActual.hijoIzquierdo
+        Sino
+            nodoActual <- nodoActual.hijoDerecho
+        Fin Si
+    Fin Mientras
+    
+    Devolver falso
+Fin Algoritmo
+
+5.3)
+Algoritmo encuentraLinealTres(nombreAtributo, valorAtributo)
+    Si raiz es nulo
+        Devolver nulo
+    Fin Si
+    
+    nodoActual <- raiz
+    
+    Mientras nodoActual no sea nulo
+        Si valorAtributo es igual al valor del atributo indicado en nodoActual
+            Devolver nodoActual
+        Fin Si
+        
+        Si valorAtributo es menor que el valor del atributo indicado en nodoActual
+            nodoActual <- nodoActual.hijoIzquierdo
+        Sino
+            nodoActual <- nodoActual.hijoDerecho
+        Fin Si
+    Fin Mientras
+    
+    Devolver nulo
+Fin Algoritmo
+

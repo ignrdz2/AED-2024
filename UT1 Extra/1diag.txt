@@ -1,0 +1,45 @@
+temp[][]
+HORAS[]
+
+//a
+for i in range(0, 6)
+	tdias = 0
+
+	for x in temp[x][i]
+		tdias += temp[x][i]
+		x++
+	promedioDias(tdias, i)
+
+
+//b
+for i in range(23, 0)
+	thoras= 0
+
+	for x in temp[x][i]
+		tdias += temp[x][i]
+		x++
+	promedioHoras(thoras, i)
+
+
+promedioDias(tdias, pos){
+	prom = tdias / 7
+	HORAS[pos] = prom
+}
+
+promedioHoras(thoras, post){
+	prom = throas / 24
+	DIAS[pos] = prom
+}
+
+hayNegativos(TEMP[][]){
+
+    isNegative = False
+
+    foreach temperatura in TEMP[][]
+
+        if temperatura.value < 0 
+            isNegative == True
+
+        return isNegative
+}
+	

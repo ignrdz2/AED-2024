@@ -1,0 +1,8 @@
+
+funcion potencia(x, n)
+	si n == 0
+		retornar 1
+	sino
+		retornar(x * potencia(x, n-1))
+	finsi
+fin funcion

@@ -1,0 +1,47 @@
+La Pila se define como una estructura de datos que sigue el principio de LIFO (Last In, First Out). Para implementar el TDA Pila, se necesitan los siguientes métodos básicos:
+
+apilar(valor): añade un elemento a la pila.
+desapilar(): elimina y devuelve el elemento más reciente añadido a la pila.
+cima(): devuelve el elemento más reciente añadido a la pila sin eliminarlo.
+estaVacia(): verifica si la pila está vacía.
+tamano(): devuelve el número de elementos en la pila.
+
+public class Pila {
+    private Lista lista;
+
+    public Pila() {
+        this.lista = new Lista();
+    }
+
+    // Método para añadir un elemento a la pila
+    public void apilar(int valor) {
+        lista.agregarAlInicio(valor);  // Agregar al inicio para seguir el principio LIFO
+    }
+
+    // Método para eliminar y devolver el elemento más reciente añadido a la pila
+    public int desapilar() {
+        if (estaVacia()) {
+            throw new IllegalStateException("La pila está vacía");
+        }
+        int valor = lista.eliminarPrimero();  // Eliminar el primer elemento de la lista
+        return valor;
+    }
+
+    // Método para devolver el elemento más reciente añadido a la pila sin eliminarlo
+    public int cima() {
+        if (estaVacia()) {
+            throw new IllegalStateException("La pila está vacía");
+        }
+        return lista.primero.valor;  // Devolver el primer elemento de la lista
+    }
+
+    // Método para verificar si la pila está vacía
+    public boolean estaVacia() {
+        return lista.estaVacia();
+    }
+
+    // Método para devolver el número de elementos en la pila
+    public int tamano() {
+        return lista.tamano();
+    }
+}

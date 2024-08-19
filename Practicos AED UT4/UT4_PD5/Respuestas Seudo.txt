@@ -1,0 +1,240 @@
+1) BuscarMin()
+El método busca el valor mínimo (o etiqueta mínima) en un árbol binario de búsqueda. Comienza desde la raíz del árbol y se mueve hacia el hijo izquierdo repetidamente hasta que alcanza un nodo sin hijo izquierdo. Luego, devuelve la etiqueta del nodo encontrado como el valor mínimo.
+
+Precondiciones:
+-El arbol debe estar inicializado
+Postcondiciones:
+-Se devuelve la etiqueta minima del arbol, en caso de estar vacio se devuelve 'null'
+
+Casos de prueba:
+-Caso de prueba 1: Árbol vacío
+	Entrada: Árbol binario de búsqueda vacío.
+	Salida esperada: null.
+-Caso de prueba 2: Árbol no vacío
+	Entrada: Árbol binario de búsqueda con 	varios nodos, donde se sabe que la etiqueta mínima es, por ejemplo, "A".
+	Salida esperada: "A".
+
+Seudocodigo:
+Algoritmo buscarMin() -> Comparable
+    Si raiz = Nulo entonces
+        Devolver Nulo
+    Fin Si
+   
+    nodo <- raiz
+    
+    mientras nodo.getHijoIzq() ≠ Nulo hacer
+        nodo <- nodo.getHijoIzq()
+    Fin mientras
+    
+    Devolver nodo.getEtiqueta()
+Fin Algoritmo
+
+Orden: O(log n)
+
+2) BuscarMax()
+El método busca el valor máximo (o etiqueta máxima) en un árbol binario de búsqueda. Comienza desde la raíz del árbol y se mueve hacia el hijo derecho repetidamente hasta que alcanza un nodo sin hijo derecho. Luego, devuelve la etiqueta del nodo encontrado como el valor máximo.
+
+Precondiciones:
+-El arbol debe estar inicializado
+Postcondiciones:
+-Se devuelve la etiqueta maxima del arbol. En caso de estar vacio se retorna 'null'
+
+Casos de prueba:
+-Caso de prueba 1: Árbol vacío
+	Entrada: Árbol binario de búsqueda vacío.
+	Salida esperada: null.
+-Caso de prueba 2: Árbol no vacío
+	Entrada: Árbol binario de búsqueda con varios nodos, donde se sabe que la etiqueta máxima es, por ejemplo, "Z".
+	Salida esperada: "Z"
+
+Seudocodigo:
+Algoritmo buscarMax() -> Comparable
+    Si raiz = Nulo entonces
+        Devolver Nulo
+    Fin Si
+    
+    nodo <- raiz
+    
+    mientras nodo.getHijoDer() ≠ Nulo hacer
+        nodo <- nodo.getHijoDer()
+    Fin mientras
+    
+    Devolver nodo.getEtiqueta()
+Fin Algoritmo
+
+Orden: O(log n)
+
+3) buscarPredecesor()
+El método busca el predecesor de un nodo con una clave específica en un árbol binario de búsqueda. Si el nodo con la clave dada no existe en el árbol, devuelve null. Si el nodo tiene un hijo izquierdo, busca el valor máximo en el subárbol izquierdo del nodo y lo devuelve como predecesor. Si el nodo no tiene hijo izquierdo, busca el predecesor en el ancestro del nodo, es decir, el primer nodo ascendente que sea padre de un subárbol derecho que contenga el nodo.
+
+Precondiciones:
+-El arbol debe estar inicializado
+-La clave proporcionada debe ser del mismo tipo que las etiquetas del arbol
+Postcondiciones:
+-Se devuelve la clave del predecesor del nodo con la clave especificada, en caso de no tener predecesor se retorna 'null'
+
+Casos de prueba:
+-Caso de prueba 1: Clave no encontrada
+	Entrada: Clave que no existe en el árbol.
+	Salida esperada: null.
+-Caso de prueba 2: Nodo sin hijo izquierdo
+	Entrada: Clave de un nodo que no tiene hijo izquierdo.
+	Salida esperada: Clave del predecesor del 	nodo, que es un ancestro ascendente del nodo.
+-Caso de prueba 3: Nodo con hijo izquierdo
+	Entrada: Clave de un nodo que tiene un hijo izquierdo.
+	Salida esperada: Clave del valor máximo en el subárbol izquierdo del nodo.
+
+Seudocodigo:
+Algoritmo buscarPredecesor(clave: Comparable) -> Comparable
+    nodo <- buscar(clave)
+    
+    Si nodo = Nulo entonces
+        Devolver Nulo
+    Fin Si
+    
+    Si nodo.getHijoIzq() ≠ Nulo entonces
+        subArbolIzquierdo <- nuevo TArbolBB()
+        subArbolIzquierdo.raiz <- nodo.getHijoIzq()
+        Devolver subArbolIzquierdo.buscarMax()
+    Fin Si
+    
+    predecesor <- Nulo
+    ancestro <- raiz
+    mientras ancestro ≠ Nulo y ancestro ≠ nodo hacer
+        Si clave > ancestro.getEtiqueta() entonces
+            predecesor <- ancestro
+            ancestro <- ancestro.getHijoDer()
+        Sino
+            ancestro <- ancestro.getHijoIzq()
+        Fin Si
+    Fin mientras
+    
+    Devolver (predecesor = Nulo) ? Nulo : predecesor.getEtiqueta()
+Fin Algoritmo
+
+Orden: O(log n)
+
+4) contarNodosNivel()
+El método cuenta la cantidad de nodos que se encuentran en un nivel específico en un árbol binario. Comienza desde la raíz del árbol y desciende a los niveles inferiores mediante un recorrido en profundidad (DFS). Si el nivel dado es igual a 1, devuelve 1, indicando que el nodo actual se encuentra en el nivel deseado. Si el nivel es mayor que 1, llama recursivamente al método para contar los nodos en los subárboles izquierdo y derecho, disminuyendo el nivel en 1 en cada llamada. Si el nivel es menor o igual a 0, devuelve 0, indicando que no hay nodos en ese nivel.
+
+Precondiciones:
+-El arbol debe estar inicializado
+-El nivel proporcionado debe ser un numero entero no negativo
+Postcondiciones:
+-Se devuelve la cantidad de nodos que se encuentran en el nivel especificado del arbol
+
+Casos de prueba:
+-Caso de prueba 1: Nivel 1
+	Entrada: Nivel 1.
+	Salida esperada: Cantidad de nodos que se encuentran en el nivel 1.
+-Caso de prueba 2: Nivel no existente
+	Entrada: Nivel mayor que la altura del árbol.
+	Salida esperada: 0.
+-Caso de prueba 3: Árbol vacío
+	Entrada: Árbol binario de búsqueda vacío.
+	Salida esperada: 0.
+-Caso de prueba 4: Nivel válido
+	Entrada: Nivel válido en un árbol no vacío.
+	Salida esperada: Cantidad de nodos que se encuentran en el nivel especificado.
+
+Seudocodigo:
+Algoritmo contarNodosNivel(nivel: entero) -> entero
+    Devolver contarNodosNivel(raiz, nivel)
+Fin Algoritmo
+
+Función contarNodosNivel(nodo: TElementoAB<T>, nivel: entero) -> entero
+    Si nodo = Nulo entonces
+        Devolver 0
+    Fin Si
+    
+    Si nivel = 1 entonces
+        Devolver 1
+    Fin Si
+    
+    cantidadIzq <- contarNodosNivel(nodo.getHijoIzq(), nivel - 1)
+    cantidadDer <- contarNodosNivel(nodo.getHijoDer(), nivel - 1)
+    
+    Devolver cantidadIzq + cantidadDer
+Fin Función
+
+Orden: O(log n)
+
+5) listarHojasConNivel()
+El método lista las hojas de un árbol binario junto con su nivel en el árbol. Comienza desde la raíz del árbol y realiza un recorrido en profundidad (DFS). Cuando encuentra una hoja (un nodo sin hijos izquierdo ni derecho), imprime la etiqueta del nodo junto con su nivel en la consola. El nivel inicialmente es 1 y se incrementa a medida que se desciende en el árbol.
+
+Precondiciones:
+-El arbol debe estar inicializado
+Postcondiciones:
+-Se imprimen en la consola las etiquetas de todas las hojas del arbol junto con su nivel en el arbol.
+
+Casos de prueba:
+-Caso de prueba 1: Árbol vacío
+	Entrada: Árbol binario de búsqueda vacío.
+	Salida esperada: No se imprime nada en la consola.
+-Caso de prueba 2: Árbol con hojas
+	Entrada: Árbol binario de búsqueda con varias hojas.
+	Salida esperada: Se imprime la etiqueta de cada hoja junto con su nivel en la consola.
+
+Seudocodigo:
+Algoritmo listarHojasConNivel()
+    listarHojasConNivel(raiz, 1)
+Fin Algoritmo
+
+Algoritmo listarHojasConNivel(nodo: TElementoAB<T>, nivel: entero)
+    Si nodo ≠ Nulo entonces
+        Si nodo.getHijoIzq() = Nulo y nodo.getHijoDer() = Nulo entonces
+            Escribir("Etiqueta: " + nodo.getEtiqueta() + "| Nivel: " + nivel)
+        Sino
+            listarHojasConNivel(nodo.getHijoIzq(), nivel + 1)
+            listarHojasConNivel(nodo.getHijoDer(), nivel + 1)
+        Fin Si
+    Fin Si
+Fin Algoritmo
+
+Orden: O(n/2)
+
+6) esABB()
+El método verifica si un árbol binario es un árbol binario de búsqueda (ABB). Para hacerlo, se realiza un recorrido en profundidad (DFS) del árbol y se compara la etiqueta de cada nodo con un rango permitido. El rango permitido se actualiza según el nodo actual: todos los nodos en el subárbol izquierdo del nodo actual deben ser menores que su etiqueta, y todos los nodos en el subárbol derecho deben ser mayores que su etiqueta.
+
+Precondiciones:
+-El arbol debe estar inicializado
+Postcondiciones:
+-Se retorna 'true' si el arbol es binario y de busqueda, se retorna 'false' en caso de no serlo
+
+Casos de prueba:
+-Caso de prueba 1: Árbol binario de búsqueda válido
+	Entrada: Árbol binario de búsqueda que cumple con las condiciones de ser un ABB.
+	Salida esperada: true.
+-Caso de prueba 2: Árbol binario de búsqueda no válido
+	Entrada: Árbol binario que no cumple con las condiciones de ser un ABB.
+	Salida esperada: false.
+-Caso de prueba 3: Árbol vacío
+	Entrada: Árbol binario de búsqueda vacío.
+	Salida esperada: true.
+
+Seudocodigo:
+Algoritmo esABB() -> boolean
+    Devolver esABB(raiz, Mínimo, Máximo)
+Fin Algoritmo
+
+Función esABB(nodo: TElementoAB<T>, min: entero, max: entero) -> boolean
+    Si nodo = Nulo entonces
+        Devolver verdadero
+    Fin Si
+    
+    Si (etiqueta(nodo) < min) o (etiqueta(nodo) > max) entonces
+        Devolver falso
+    Fin Si
+    
+    Si no esABB(nodo.getHijoIzq(), min, etiqueta(nodo) - 1) entonces
+        Devolver falso
+    Fin Si
+    Si no esABB(nodo.getHijoDer(), etiqueta(nodo) + 1, max) entonces
+        Devolver falso
+    Fin Si
+    
+    Devolver verdadero
+Fin Función
+
+Orden: O(n)
+

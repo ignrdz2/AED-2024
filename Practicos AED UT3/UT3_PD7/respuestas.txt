@@ -1,0 +1,94 @@
+1)
+Unión de conjuntos.
+
+
+-Precondiciones:
+Las listas de entrada están ordenadas.
+
+
+-Postcondiciones: 
+Se devuelve una nueva lista ordenada que contiene todos los elementos de los dos conjuntos originales, sin duplicados.
+
+
+-Seudocodigo:
+Función Union(conjunto1, conjunto2):
+    nuevoConjunto = ListaVacia
+    índice1 = 0
+    índice2 = 0
+    
+    Mientras índice1 < longitud(conjunto1) y índice2 < longitud(conjunto2) hacer:
+        elemento1 = obtenerElemento(conjunto1, índice1)
+        elemento2 = obtenerElemento(conjunto2, índice2)
+        
+        Si elemento1 < elemento2 hacer:
+            agregarElemento(nuevoConjunto, elemento1)
+            índice1 = índice1 + 1
+        Sino Si elemento2 < elemento1 hacer:
+            agregarElemento(nuevoConjunto, elemento2)
+            índice2 = índice2 + 1
+        Sino:
+            agregarElemento(nuevoConjunto, elemento1)
+            índice1 = índice1 + 1
+            índice2 = índice2 + 1
+    
+    Mientras índice1 < longitud(conjunto1) hacer:
+        agregarElemento(nuevoConjunto, obtenerElemento(conjunto1, índice1))
+        índice1 = índice1 + 1
+    
+    Mientras índice2 < longitud(conjunto2) hacer:
+        agregarElemento(nuevoConjunto, obtenerElemento(conjunto2, índice2))
+        índice2 = índice2 + 1
+    
+    Devolver nuevoConjunto
+
+
+-Especificacion casos de prueba:
+  Conjunto1: {1,3,5,7}
+  Conjunto2: {2,4,5,6,8}
+  Resultado esperado: {1,2,3,4,5,6,7,8}
+
+
+2)
+Intersección de conjuntos.
+
+
+-Precondiciones:
+Las listas de entrada estan ordenadas.
+
+
+-Postcondiciones:
+Se devuelve una nueva lista ordenada que contiene solo los elementos que estan presentes en ambos conjuntos originales.
+
+
+-Seudocodigo:
+Función Intersección(conjunto1, conjunto2):
+    nuevoConjunto = ListaVacia
+    índice1 = 0
+    índice2 = 0
+    
+    Mientras índice1 < longitud(conjunto1) y índice2 < longitud(conjunto2) hacer:
+        elemento1 = obtenerElemento(conjunto1, índice1)
+        elemento2 = obtenerElemento(conjunto2, índice2)
+        
+        Si elemento1 < elemento2 hacer:
+            índice1 = índice1 + 1
+        Sino Si elemento2 < elemento1 hacer:
+            índice2 = índice2 + 1
+        Sino:
+            agregarElemento(nuevoConjunto, elemento1)
+            índice1 = índice1 + 1
+            índice2 = índice2 + 1
+    
+    Devolver nuevoConjunto
+
+
+-Especificacion de casos de prueba:
+  Conjunto1: {1,3,5,7}
+  Conjunto2: {2,4,5,6,8}
+  Resultado esperado: {5}
+
+
+Orden del tiempo de ejecucion de ambos: O(n)
+
+
+2)

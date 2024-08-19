@@ -1,0 +1,53 @@
+1. 
+
+El algoritmo de Quicksort se basa en el principio de "divide y vencerás". Durante su ejecución, se mantiene la siguiente condición en todo momento:
+
+Condición del Quicksort
+En cada paso del algoritmo, los elementos del arreglo se dividen en dos subarreglos alrededor de un pivote, de manera que:
+- Todos los elementos en el subarreglo izquierdo son menores o iguales al pivote.
+- Todos los elementos en el subarreglo derecho son mayores o iguales al pivote.
+Esta partición asegura que el pivote esté en su posición final correcta en el arreglo ordenado. Luego, el algoritmo se aplica recursivamente a los dos subarreglos hasta que cada subarreglo contiene uno o cero elementos, momento en el cual todo el arreglo está ordenado. Esta propiedad se cumple en cada nivel de la recursión, garantizando la correcta ordenación del conjunto de datos.
+
+ejercicio 3
+
+El artículo en DZone discute el quicksort de doble pivote utilizado en el método Arrays.sort de Java, esta versión mejora el rendimiento para arrays grandes utilizando dos pivotes en lugar de uno. Los puntos clave son:
+Rendimiento de datos aleatorios: El quicksort de doble pivote es más rápido que el quicksort básico y el de tres pivotes. 
+Rendimiento de datos duplicados: El quicksort de doble pivote supera significativamente a los demás, especialmente con duplicados.
+Estabilidad: El quicksort de doble pivote no es estable; no preserva el orden relativo de los elementos iguales. 
+Complejidad: La complejidad temporal sigue siendo 𝑂 ( 𝑛 log  𝑛 ) O(nlogn) para casos medios, pero en el peor de los casos puede degradarse a 𝑂 ( 𝑛 2 ) O(n 2 ) sin precauciones.
+
+ejercicio 4
+ Análisis Detallado del Orden del Tiempo de Ejecución de Quicksort
+
+1. Peor Caso del Quicksort:
+El peor caso ocurre cuando el pivote seleccionado es siempre el menor o el mayor elemento del subconjunto a ordenar. Esto provoca que la partición divida el conjunto en dos partes extremadamente desiguales (una vacía y otra con el resto de los elementos). En este caso, el tiempo de ejecución del algoritmo se degrada a (O(n^2)).
+
+2. Probabilidad del Peor Caso:
+Si las posiciones de las claves tienen una distribución uniforme, la probabilidad de seleccionar siempre el peor pivote es muy baja. En cada partición, el peor caso solo se da si el pivote es el elemento más grande o el más pequeño, lo cual tiene una probabilidad de (2/n) en cada paso. Para que esto ocurra en todas las (n) particiones, la probabilidad sería extremadamente baja ((2/n)^n)).
+
+3. Mejora del Algoritmo para Conjuntos Pequeños:
+Para mejorar la eficiencia en conjuntos pequeños, el algoritmo Quicksort puede cambiar a un método de ordenación más sencillo como la ordenación por inserción. Esto se hace típicamente cuando el tamaño del subconjunto es menor que un umbral definido (por ejemplo, 10 o 20 elementos).
+
+Modificación del Algoritmo:
+
+public static void quicksort(int[] arr, int low, int high) {
+    if (high - low < 10) {
+        insertionSort(arr, low, high);
+    } else {
+        int pivotIndex = partition(arr, low, high);
+        quicksort(arr, low, pivotIndex - 1);
+        quicksort(arr, pivotIndex + 1, high);
+    }
+}
+
+private static void insertionSort(int[] arr, int low, int high) {
+    for (int i = low + 1; i <= high; i++) {
+        int key = arr[i];
+        int j = i - 1;
+        while (j >= low && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}

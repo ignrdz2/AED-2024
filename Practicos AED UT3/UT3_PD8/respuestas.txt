@@ -1,0 +1,60 @@
+1)
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class DirectorioSucursales {
+
+    private List<String> sucursales;
+
+    public DirectorioSucursales() {
+        this.sucursales = new ArrayList<>();
+    }
+
+    // Agregar una sucursal
+    public void agregarSucursal(String ciudad) {
+        sucursales.add(ciudad);
+    }
+
+    // Buscar una sucursal
+    public boolean buscarSucursal(String ciudad) {
+        return sucursales.contains(ciudad);
+    }
+
+    // Quitar una sucursal
+    public void quitarSucursal(String ciudad) {
+        sucursales.remove(ciudad);
+    }
+
+    // Listar todas las sucursales
+    public void listarSucursales() {
+        for (String ciudad : sucursales) {
+            System.out.println(ciudad);
+        }
+    }
+
+    // Indicar la cantidad de sucursales
+    public int cantidadSucursales() {
+        return sucursales.size();
+    }
+
+    // Indicar si el directorio de sucursales está o no vacío
+    public boolean estaVacio() {
+        return sucursales.isEmpty();
+    }
+}
+
+
+2)
+Anteriormente se utiliza una estructura basada en nodos y punteros, mientras que en esta implementacion se utiliza un ArrayList. Esta implementacion es mas sencilla y directa ya que proporciona metodos para agregar, buscar y eliminar elementos de manera eficiente.
+
+3)
+La implementacion con ArrayList consume mas memoria que los nodos y punteros, ya que Arraylist reserva una capacidad inicial y la va incrementando segun sea necesario. Ademas cada elemento de un ArrayList es un objeto el cu cual contiene el elemeto y algunos metadatos adicionales.
+
+4)
+Agregar una sucursal: O(1)
+Buscar una sucursal: O(n)
+Quitar una sucursal: O(n)
+Listar todas las sucursales: O(n)
+Indicar la cantidad de sucursales: O(1)
+Indicar si el directorio de sucursales esta o no vacio: O(1)

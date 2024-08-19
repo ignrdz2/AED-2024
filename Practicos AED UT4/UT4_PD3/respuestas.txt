@@ -1,0 +1,140 @@
+1)
+El algoritmo inserta un nuevo nodo en un arbol binario de busqueda. Comienza desde la raiz del arbol y compara la clave del nuevo nodo con la clave del nodo actual. Si la clave del nuevo nodo es menor que la clave del nodo actual, se mueve alsubarbol izquierdo, de lo contrario, se mueve al subarbolderecho. El proceso continua hasta encontrar un lugar vacio donde se puede insertar el nuevo nodo.
+
+Precondiciones:
+-El arbol debe estar inicializado
+-El nuevo nodo no debe existir en el arbol
+Postcondiciones:
+-El nuevoo nodo se ha insertado correctamente en el arbol.
+
+Seudocodigo:
+Algoritmo InsertarNodo(Arbol, NuevoNodo)
+    NodoActual <- Raiz(Arbol)
+    
+    Si NodoActual = Nulo entonces
+        Raiz(Arbol) <- NuevoNodo
+    Fin Si
+    
+    mientras Verdadero hacer
+        Si Clave(NuevoNodo) < Clave(NodoActual) entonces
+            Si HijoIzquierdo(NodoActual) = Nulo entonces
+                HijoIzquierdo(NodoActual) <- NuevoNodo
+                Salir mientras
+            Sino
+                NodoActual <- HijoIzquierdo(NodoActual)
+            Fin Si
+        Sino
+            Si HijoDerecho(NodoActual) = Nulo entonces
+                HijoDerecho(NodoActual) <- NuevoNodo
+                Salir mientras
+            Sino
+                NodoActual <- HijoDerecho(NodoActual)
+            Fin Si
+        Fin Si
+    Fin mientras
+Fin Algoritmo
+
+
+Orden: O(n)
+
+-------
+
+2)
+El algoritmo cuenta todas las hojas que tiene un árbol binario. Comienza desde la raíz del árbol y realiza un recorrido en profundidad (DFS) para visitar cada nodo. Cuando encuentra un nodo que no tiene hijos (hoja), incrementa el contador de hojas. El algoritmo continúa visitando los nodos hasta que todos los nodos del árbol hayan sido explorados.
+
+Precondiciones: 
+-El arbol debe estar inicializado
+Postcondiciones:
+-Se cuenta el numero total de hojas en el arbol.
+
+Seudocodigo:
+Algoritmo ContarHojas(Arbol)
+    ContadorHojas <- 0
+    
+    ContarHojasRecursivo(Raiz(Arbol), ContadorHojas)
+    
+    Devolver ContadorHojas
+Fin Algoritmo
+
+Algoritmo ContarHojasRecursivo(Nodo, ContadorHojas)
+    Si Nodo = Nulo entonces
+        Devolver
+    Fin Si
+    
+    Si EsHoja(Nodo) entonces
+        ContadorHojas <- ContadorHojas + 1
+    Sino
+        ContarHojasRecursivo(HijoIzquierdo(Nodo), ContadorHojas)
+        ContarHojasRecursivo(HijoDerecho(Nodo), ContadorHojas)
+    Fin Si
+Fin Algoritmo
+
+
+Orden: O(n)
+
+-----
+
+3)
+El algoritmo calcula la suma de las claves de todos los elementos almacenados en un árbol binario de búsqueda. Comienza desde la raíz del árbol y realiza un recorrido en profundidad (DFS) para visitar cada nodo. En cada nodo, suma la clave del nodo actual a una variable acumuladora. El algoritmo continúa visitando los nodos hasta que todos los nodos del árbol hayan sido explorados.
+
+Precondiciones:
+-El arbol debe estar inicializado
+-Las claves de los elementos deben ser de tipo entero.
+Postcondiciones:
+-Se calcula la suma de las claves de todos los elemetos del arbol.
+
+Seudocodigo:
+Algoritmo SumaClaves(Arbol)
+    Suma <- 0
+    
+    SumaClavesRecursivo(Raiz(Arbol), Suma)
+    Devolver Suma
+Fin Algoritmo
+
+Algoritmo SumaClavesRecursivo(Nodo, Suma)
+    Si Nodo = Nulo entonces
+        Devolver
+    Fin Si
+    Suma <- Suma + Clave(Nodo)
+    
+    SumaClavesRecursivo(HijoIzquierdo(Nodo), Suma)
+    SumaClavesRecursivo(HijoDerecho(Nodo), Suma)
+Fin Algoritmo
+
+Orden: O(n)
+
+-----
+
+4)
+El algoritmo recibe como parámetro un entero que indica un cierto nivel en un árbol binario. Luego, cuenta la cantidad de nodos del árbol que se encuentran en ese nivel específico. Comienza desde la raíz del árbol y realiza un recorrido en profundidad (DFS) para visitar cada nodo. Durante el recorrido, lleva un seguimiento del nivel actual de cada nodo. Si el nivel actual de un nodo coincide con el nivel dado como parámetro, se incrementa un contador de nodos. El algoritmo continúa visitando los nodos hasta que todos los nodos del árbol hayan sido explorados.
+
+Precondiciones:
+-El arbol debe estar inicializado.
+-El nivel dado como parametro debe ser un numero entero valido
+Postcondiciones:
+-Se devuelve la cantidad de nodos del arbol que se encuentran en el nivel especificado.
+
+Seudocodigo:
+Algoritmo ContarNodosEnNivel(Arbol, Nivel)
+    Contador <- 0
+    
+    ContarNodosEnNivelRecursivo(Raiz(Arbol), Nivel, 1, Contador)
+
+    Devolver Contador
+Fin Algoritmo
+
+Algoritmo ContarNodosEnNivelRecursivo(Nodo, NivelBuscado, NivelActual, Contador)
+    Si Nodo = Nulo entonces
+        Devolver
+    Fin Si
+    
+    Si NivelActual = NivelBuscado entonces
+        Contador <- Contador + 1
+    Fin Si
+    
+    ContarNodosEnNivelRecursivo(HijoIzquierdo(Nodo), NivelBuscado, NivelActual + 1, Contador)
+    ContarNodosEnNivelRecursivo(HijoDerecho(Nodo), NivelBuscado, NivelActual + 1, Contador)
+Fin Algoritmo
+
+
+Orden: O(n)

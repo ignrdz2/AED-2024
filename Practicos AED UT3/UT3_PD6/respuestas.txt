@@ -1,0 +1,4 @@
+1) a- 104
+2) d- Cleveland
+3) c- Queda vacia y da error de ejecucion
+4) Montreal;_Caracas;_Tulsa;_Mobile;Vancouver;_

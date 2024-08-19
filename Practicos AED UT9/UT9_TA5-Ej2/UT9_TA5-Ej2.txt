@@ -1,0 +1,242 @@
+1. Paso a Paso: Construcción del APO y Ordenación del Conjunto
+
+Insertar los elementos en el APO:
+
+Elementos a insertar (en orden): 256, 458, 365, 298, 043, 648, 778, 621, 655, 019, 124, 847
+
+1. Insertar 256:  
+   256
+
+2. Insertar 458:  
+     256
+    / 
+  458
+  
+
+3. Insertar 365:
+     256
+    /   \
+  458   365
+  
+
+4. Insertar 298:
+     256
+    /   \
+  458   365
+  /
+298
+  
+
+5. Insertar 043 (y hacer heapify):
+     256
+    /   \
+  043   365
+  / \
+458 298
+  
+
+6. Insertar 648:
+     256
+    /   \
+  043   365
+  / \   /
+458 298 648
+  
+
+7. Insertar 778:
+  
+     256
+    /   \
+  043   365
+  / \   / \
+458 298 648 778
+  
+
+8. Insertar 621 (y hacer heapify):
+  
+     256
+    /   \
+  043   365
+  / \   / \
+458 298 621 778
+  /
+648
+  
+
+9. Insertar 655 (y hacer heapify):
+  
+     256
+    /   \
+  043   365
+  / \   / \
+458 298 621 655
+  / \
+648 778
+  
+
+10. Insertar 019 (y hacer heapify):
+   
+      019
+     /   \
+    043   256
+   / \   / \
+  458 298 621 365
+ / \ / \
+648 778 655
+  
+
+11. Insertar 124 (y hacer heapify):
+   
+      019
+     /   \
+    043   256
+   / \   / \
+  124 298 621 365
+ / \ / \
+458 778 655
+/
+648
+  
+
+12. Insertar 847 (y hacer heapify):
+   
+      019
+     /   \
+    043   256
+   / \   / \
+  124 298 621 365
+ / \ / \ /
+458 778 655 847
+/
+648
+  
+
+ Ordenación del APO
+
+Para ordenar el APO, suprimimos el mínimo repetidamente:
+
+1. Eliminar 019:
+   
+      043
+     /   \
+    124   256
+   / \   / \
+  458 298 621 365
+ / \ / \ /
+648 778 655 847
+  
+
+2. Eliminar 043:
+   
+      124
+     /   \
+    256   621
+   / \   / \
+  458 298 655 365
+ / \ / \
+648 778 847
+  
+
+3. Eliminar 124:
+   
+      256
+     /   \
+    298   621
+   / \   / \
+  458 847 655 365
+ / \
+648 778
+  
+
+4. Eliminar 256:
+   
+      298
+     /   \
+    365   621
+   / \   / \
+  458 847 655 778
+ /
+648
+  
+
+5. Eliminar 298:
+   
+      365
+     /   \
+    458   621
+   / \   / \
+  648 847 655 778
+  
+
+6. Eliminar 365:
+   
+      458
+     /   \
+    648   621
+   / \
+  778 847
+ /
+655
+  
+
+7. Eliminar 458:
+   
+      621
+     /   \
+    648   655
+   / \
+  778 847
+  
+
+8. Eliminar 621:
+   
+      648
+     /   \
+    778   655
+   /
+  847
+  
+
+9. Eliminar 648:
+   
+      655
+     /   \
+    778   847
+  
+
+10. Eliminar 655:
+   
+      778
+     / 
+    847
+  
+
+11. Eliminar 778:
+   
+      847
+  
+
+12. Eliminar 847:
+   
+   (vacío)
+  
+
+
+
+1. Un Árbol Parcialmente Ordenado es:
+   d. Ninguna es correcta
+
+2. Operaciones primitivas no necesarias:
+   a. TNodoArbolBinario.hijoIzq()
+   b. TNodoArbolBinario.hijoDer ()
+   c. TNodoArbolBinario.Buscar(unaClave)
+   d. TNodoArbolBinario.Padre()
+
+3. Orden del tiempo de ejecución de TNodoArbolBinario.Padre():
+   a) O(n)
+
+4. Para insertar un nuevo elemento en el TDA APO:
+   c) Escribir una nueva operación que coloque el nuevo elemento en la posición más a la izquierda del último nivel y luego haga los intercambios necesarios para que finalmente quede en el lugar que le corresponde
+
+5. Orden del tiempo de ejecución de la primitiva “Insertar” del TDA APO:
+   d) O(log (n))

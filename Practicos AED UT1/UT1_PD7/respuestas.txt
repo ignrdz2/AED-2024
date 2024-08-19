@@ -1,0 +1,29 @@
+1)
+El operador '==' para cadenas compara las referencias de los objetos, no los
+contenidos. Las cadenas literales comparten la misma referencia debido a la pool 
+de cadenas de Java, haciendo que la condicion 's != 1000' nunca se cumpla.
+
+En C# el operador '==' para cadenas compara los contenidos de las cadenas, no las referencias
+de los objetos. Por lo que el bucle en C# terminaria correctamente mientras que en java
+seria infitino.
+
+2)
+En el 1, la sentencia 'TRUE' sera ejecutada, ya que las cadenas literales en Java se
+almacenan en una pool de cadenas lo que significa que si dos cadenas literales tienen el
+mismo valor, compartiran la misma referencia.
+Referencia: Oracle Java Documentation
+"String literals are typically used in string concatenation and they are treated specially. All string literals that have the same contents are treated as the same instance at compile time."
+
+En el 2, la sentencia 'FALSE' sera ejecutada, ya que aunque el contenido de las cadenas es el mismo,
+'s1' y 's2' son dos objetos diferentes en memoria.
+Referencia: Oracle Java Documentation
+"When the intern method is invoked, if the pool already contains a string equal to this String object as determined by the equals(Object) method, then the string from the pool is returned. Otherwise, this String object is added to the pool and a reference to this String object is returned."
+
+
+String s1 = "Hola";
+String s2 = "Hola";
+if ( s1.equals(s2) ) {
+    System.out.println( "True" );
+} else {
+    System.out.println( "False" );
+}

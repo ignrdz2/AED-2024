@@ -1,0 +1,314 @@
+1. Combinaciones de Incrementos Publicadas
+Incrementos de Hibbard
+La secuencia de Hibbard utiliza incrementos de la forma (2^k - 1). Esta secuencia fue propuesta por Frank W. Hibbard y es conocida por ser eficiente y fácil de calcular.
+
+Implementación:
+Para implementar los incrementos de Hibbard, primero se genera la secuencia hasta que el valor más grande sea menor que el tamaño del arreglo. Luego, se utiliza esta secuencia en orden decreciente durante el proceso de ordenamiento.
+
+Incrementos de Sedgewick
+Robert Sedgewick propuso varias secuencias de incrementos, siendo una de las más conocidas la que utiliza incrementos de la forma 1,5,19,41,109,…, definida por las fórmulas 9⋅4 i −9⋅2 i +1 y 4 𝑖 − 3 ⋅ 2 𝑖 + 1 4 i −3⋅2 i +1 para 𝑖 ≥ 0 i≥0.
+
+Implementación:
+La secuencia se genera aplicando las fórmulas hasta que el incremento más grande es menor que el tamaño del arreglo. Estos incrementos se utilizan en orden decreciente para el ordenamiento.
+
+Incrementos de Pratt
+Vaughan Pratt propuso una secuencia de incrementos que es una combinación de potencias de 2 y 3. La secuencia incluye números de la forma 2^i⋅3^j.
+
+Implementación:
+La secuencia se construye generando todos los productos de las potencias de 2 y 3 que sean menores que el tamaño del arreglo. Estos incrementos se utilizan en orden decreciente para el ordenamiento.
+
+2. Análisis del Orden del Tiempo de Ejecución
+
+El tiempo de ejecución del algoritmo de Shellsort depende de la secuencia de incrementos utilizada. A continuación, se presenta un análisis del tiempo de ejecución para las secuencias descritas:
+
+- Incrementos de Hibbard: El tiempo de ejecución es O(n^(3/2)) Aunque es mejor que el O(n^2) de algoritmos simples, no es tan eficiente como otras secuencias más avanzadas.
+
+- Incrementos de Sedgewick: El tiempo de ejecución es (O(n^(4/3)). Es más eficiente que la secuencia de Hibbard debido a una mejor dispersión de los elementos durante el proceso de ordenamiento.
+
+- Incrementos de Pratt: La secuencia de Pratt tiene un tiempo de ejecución de (O(nlog^2n)), siendo una de las más eficientes debido a la combinación de potencias de 2 y 3 que permite una mejor distribución de los elementos.
+
+3. Ejemplificación del Ordenamiento
+
+Para mostrar cómo se ordena el conjunto de datos utilizando las tres combinaciones de incrementos, describiremos el proceso de forma teórica.
+Conjunto de Datos
+256, 458, 655, 298, 043, 648, 778, 621, 655, 019, 124, 847
+
+Proceso con Incrementos de Hibbard
+1. Generación de la Secuencia de Incrementos:
+   La secuencia de incrementos es (1, 3, 7, 15, 31, ), hasta que el incremento es menor que el tamaño del arreglo (12 elementos).
+   Por ejemplo: (1, 3, 7).
+
+2. Ordenamiento:
+   - Para (gap = 7), el arreglo se divide en subarreglos y se aplica inserción directa.
+   - Para (gap = 3), se repite el proceso.
+   - Para (gap = 1), se realiza la inserción final.
+
+Proceso con Incrementos de Sedgewick
+
+1. Generación de la Secuencia de Incrementos:
+   La secuencia de incrementos es (1, 5, 19, 41, 109).
+   Por ejemplo: (1, 5).
+
+2. Ordenamiento:
+   - Para (gap = 5), el arreglo se divide en subarreglos y se aplica inserción directa.
+   - Para (gap = 1), se realiza la inserción final.
+
+ Proceso con Incrementos de Pratt
+
+1. Generación de la Secuencia de Incrementos:
+   La secuencia de incrementos incluye números de la forma (2^i cdot 3^j), hasta que el incremento es menor que el tamaño del arreglo.
+   Por ejemplo: (1, 2, 3, 4, 6, 8, 9).
+
+2. Ordenamiento:
+   - Para (gap = 9), el arreglo se divide en subarreglos y se aplica inserción directa.
+   - Para (gap = 8), se repite el proceso.
+   - Para (gap = 6), se repite el proceso.
+   - Para (gap = 4), se repite el proceso.
+   - Para (gap = 3), se repite el proceso.
+   - Para (gap = 2), se repite el proceso.
+   - Para (gap = 1), se realiza la inserción final.
+
+
+EJERCICIO 2
+
+1. Algoritmo Burbuja: Paso a Paso
+
+Para el conjunto de datos:
+
+
+44 - 55 - 12 - 42 - 94 - 18 - 6 - 67
+
+
+Vamos a ordenar el conjunto utilizando el algoritmo de Burbuja, mostrando el estado del conjunto en cada iteración.
+
+Inicial:
+
+44 - 55 - 12 - 42 - 94 - 18 - 6 - 67
+
+
+Iteración 1:
+
+44 - 55 - 12 - 42 - 94 - 18 - 6 - 67 (inicial)
+44 - 12 - 55 - 42 - 94 - 18 - 6 - 67
+44 - 12 - 42 - 55 - 94 - 18 - 6 - 67
+44 - 12 - 42 - 55 - 18 - 94 - 6 - 67
+44 - 12 - 42 - 55 - 18 - 6 - 94 - 67
+44 - 12 - 42 - 55 - 18 - 6 - 67 - 94
+
+
+Iteración 2:
+
+44 - 12 - 42 - 55 - 18 - 6 - 67 - 94 (inicial)
+12 - 44 - 42 - 55 - 18 - 6 - 67 - 94
+12 - 42 - 44 - 55 - 18 - 6 - 67 - 94
+12 - 42 - 44 - 18 - 55 - 6 - 67 - 94
+12 - 42 - 44 - 18 - 6 - 55 - 67 - 94
+
+
+Iteración 3:
+
+12 - 42 - 44 - 18 - 6 - 55 - 67 - 94 (inicial)
+12 - 42 - 44 - 18 - 6 - 55 - 67 - 94
+12 - 42 - 18 - 44 - 6 - 55 - 67 - 94
+12 - 42 - 18 - 6 - 44 - 55 - 67 - 94
+
+
+Iteración 4:
+
+12 - 42 - 18 - 6 - 44 - 55 - 67 - 94 (inicial)
+12 - 42 - 18 - 6 - 44 - 55 - 67 - 94
+12 - 18 - 42 - 6 - 44 - 55 - 67 - 94
+12 - 18 - 6 - 42 - 44 - 55 - 67 - 94
+
+
+Iteración 5:
+
+12 - 18 - 6 - 42 - 44 - 55 - 67 - 94 (inicial)
+12 - 18 - 6 - 42 - 44 - 55 - 67 - 94
+12 - 6 - 18 - 42 - 44 - 55 - 67 - 94
+
+
+Iteración 6:
+
+12 - 6 - 18 - 42 - 44 - 55 - 67 - 94 (inicial)
+6 - 12 - 18 - 42 - 44 - 55 - 67 - 94
+
+
+Iteración 7:
+
+6 - 12 - 18 - 42 - 44 - 55 - 67 - 94 (inicial)
+
+
+Sí, el conjunto queda ordenado antes de la última iteración.
+
+
+2. Mejora del Algoritmo Burbuja
+El algoritmo de Burbuja puede mejorarse de varias maneras. Aquí hay dos mejoras comunes:
+
+Mejora 1: Algoritmo Burbuja Optimizado con Marcador de Intercambio
+
+Esta mejora agrega una bandera que indica si se realizó algún intercambio durante una pasada. Si no se realizó ningún intercambio, el arreglo ya está ordenado y el algoritmo puede detenerse.
+
+Pseudocódigo:
+procedure bubbleSortOptimized(A: lista de elementos)
+    n = length(A)
+    for i from 1 to n - 1 do
+        swapped = false
+        for j from 0 to n - i - 1 do
+            if A[j] > A[j + 1] then
+                swap(A[j], A[j + 1])
+                swapped = true
+        end for
+        if not swapped then
+            break
+        end if
+    end for
+end procedure
+
+Mejora 2: Algoritmo Burbuja con Borde Ajustado
+
+En cada iteración, después de la primera pasada completa, se puede ajustar el borde hasta donde es necesario seguir comparando, ya que la mayor clave se habrá movido a su posición final en cada pasada.
+
+procedure bubbleSortAdjusted(A: list of sortable items)
+    n = length(A)
+    repeat
+        new_n = 0
+        for i from 1 to n - 1 do
+            if A[i - 1] > A[i] then
+                swap(A[i - 1], A[i])
+                new_n = i
+            end if
+        end for
+        n = new_n
+    until n = 0
+end procedure
+
+
+3. Ejemplificación del Conjunto de Datos
+
+ Mejora 1: Burbuja Optimizado
+
+Conjunto de Datos:
+
+44 - 55 - 12 - 42 - 94 - 18 - 6 - 67
+
+
+Paso a Paso:
+
+Iteración 1:
+44 - 55 - 12 - 42 - 94 - 18 - 6 - 67
+44 - 12 - 55 - 42 - 94 - 18 - 6 - 67
+44 - 12 - 42 - 55 - 94 - 18 - 6 - 67
+44 - 12 - 42 - 55 - 18 - 94 - 6 - 67
+44 - 12 - 42 - 55 - 18 - 6 - 94 - 67
+44 - 12 - 42 - 55 - 18 - 6 - 67 - 94
+
+Iteración 2:
+12 - 44 - 42 - 55 - 18 - 6 - 67 - 94
+12 - 42 - 44 - 55 - 18 - 6 - 67 - 94
+12 - 42 - 44 - 18 - 55 - 6 - 67 - 94
+12 - 42 - 44 - 18 - 6 - 55 - 67 - 94
+
+Iteración 3:
+12 - 42 - 44 - 18 - 6 - 55 - 67 - 94
+12 - 42 - 18 - 44 - 6 - 55 - 67 - 94
+12 - 42 - 18 - 6 - 44 - 55 - 67 - 94
+
+Iteración 4:
+12 - 18 - 42 - 6 - 44 - 55 - 67 - 94
+12 - 18 - 6 - 42 - 44 - 55 - 67 - 94
+
+Iteración 5:
+12 - 6 - 18 - 42 - 44 - 55 - 67 - 94
+
+Iteración 6:
+6 - 12 - 18 - 42 - 44 - 55 - 67 - 94
+
+
+Mejora 2: Burbuja con Borde Ajustado
+
+Conjunto de Datos:
+
+44 - 55 - 12 - 42 - 94 - 18 - 6 - 67
+
+
+Paso a Paso:
+
+Iteración 1:
+44 - 55 - 12 - 42 - 94 - 18 - 6 - 67
+44 - 12 - 55 - 42 - 94 - 18 - 6 - 67
+44 - 12 - 42 - 55 - 94 - 18 - 6 - 67
+44 - 12 - 42 - 55 - 18 - 94 - 6 - 67
+44 - 12 - 42 - 55 - 18 - 6 - 94 - 67
+44 - 12 - 42 - 55 - 18 - 6 - 67 - 94
+
+Iteración 2:
+12 - 44 - 42 - 55 - 18 - 6 - 67 - 94
+12 - 42 - 44 - 55 - 18 - 6 - 67 - 94
+12 - 42 - 44 - 18 - 55 - 6 - 67 - 94
+12 - 42 - 44 - 18 - 6 - 55 - 67 - 94
+
+Iteración 3:
+12 - 42 - 44 - 18 - 6 - 55 - 67 - 94
+12 - 42 - 18 - 44 - 6 - 55 - 67 - 94
+12 - 42 - 18 - 6 - 44 - 55 - 67 - 94
+
+Iteración 4:
+12 - 18 - 42 - 6 - 44 - 55 - 67 - 94
+12
+
+ - 18 - 6 - 42 - 44 - 55 - 67 - 94
+
+Iteración 5:
+12 - 6 - 18 - 42 - 44 - 55 - 67 - 94
+
+Iteración 6:
+6 - 12 - 18 - 42 - 44 - 55 - 67 - 94
+
+
+4. Algoritmo Shakersort (Cocktail Sort)
+Shakersort es una variación del algoritmo Burbuja que ordena en ambas direcciones en cada pasada a través de la lista. Esto permite que los elementos grandes "burbujeen" hacia el final y los elementos pequeños "burbujeen" hacia el principio.
+
+Conjunto de Datos:
+
+44 - 55 - 12 - 42 - 94 - 18 - 6 - 67
+
+
+Paso a Paso:
+
+Pasada 1 (Izquierda a Derecha):
+
+44 - 55 - 12 - 42 - 94 - 18 - 6 - 67
+44 - 12 - 55 - 42 - 94 - 18 - 6 - 67
+44 - 12 - 42 - 55 - 94 - 18 - 6 - 67
+44 - 12 - 42 - 55 - 18 - 94 - 6 - 67
+44 - 12 - 42 - 55 - 18 - 6 - 94 - 67
+44 - 12 - 42 - 55 - 18 - 6 - 67 - 94
+
+
+Pasada 1 (Derecha a Izquierda):
+
+44 - 12 - 42 - 55 - 18 - 6 - 67 - 94
+44 - 12 - 42 - 18 - 55 - 6 - 67 - 94
+44 - 12 - 6 - 42 - 18 - 55 - 67 - 94
+44 - 6 - 12 - 42 - 18 - 55 - 67 - 94
+6 - 44 - 12 - 42 - 18 - 55 - 67 - 94
+
+
+Pasada 2 (Izquierda a Derecha):
+
+6 - 44 - 12 - 42 - 18 - 55 - 67 - 94
+6 - 12 - 44 - 42 - 18 - 55 - 67 - 94
+6 - 12 - 42 - 44 - 18 - 55 - 67 - 94
+6 - 12 - 42 - 18 - 44 - 55 - 67 - 94
+
+
+Pasada 2 (Derecha a Izquierda):
+
+6 - 12 - 42 - 18 - 44 - 55 - 67 - 94
+6 - 12 - 18 - 42 - 44 - 55 - 67 - 94
+
+
+Pasada 3 (Izquierda a Derecha):
+
+6 - 12 - 18 - 42 - 44 - 55 - 67 - 94

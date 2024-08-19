@@ -1,0 +1,54 @@
+1)
+Los puntos de articulación serian: Nairobi y Mekele
+
+El código implementado esta en la carpeta "UT5"
+
+2)
+Algoritmo encontrarPuntosDeArticulación(grafo)
+    Entrada: grafo (TGraph) - Grafo no dirigido
+    Salida: puntosDeArticulación (Lista de TVertex) - Lista de puntos de articulación
+
+    puntosDeArticulación <- ListaVacia()
+    tiempo <- 0
+    visitado <- Mapa (clave: TVertex, valor: Boolean)
+    tiempoDescubrimiento <- Mapa (clave: TVertex, valor: Integer)
+    tiempoMinimo <- Mapa (clave: TVertex, valor: Integer)
+    padre <- Mapa (clave: TVertex, valor: TVertex)
+
+    Para cada vertice en grafo.obtenerVertices()
+        visitado[vertice] <- Falso
+        tiempoDescubrimiento[vertice] <- -1
+        tiempoMinimo[vertice] <- -1
+        padre[vertice] <- Nulo
+
+    Para cada vertice en grafo.obtenerVertices()
+        Si no visitado[vertice]
+            DFS(vertice, tiempo, visitado, tiempoDescubrimiento, tiempoMinimo, padre, puntosDeArticulación)
+
+    Retornar puntosDeArticulación
+
+
+
+Procedimiento DFS()
+    visitados <- ConjuntoVacio()
+    Para cada vertice en vertices.obtenerValores()
+        DFSRecursivo(vertice, visitados)
+    FinPara
+FinProcedimiento
+
+Procedimiento DFSRecursivo(vertice, visitados)
+    Si visitados.contiene(vertice.obtenerEtiqueta()) Entonces
+        Retornar
+    FinSi
+
+    visitados.agregar(vertice.obtenerEtiqueta())
+
+    Imprimir("Visitado: " + vertice.obtenerEtiqueta())
+
+    Para cada obj en vertice.obtenerAdyacentes()
+        Si obj es instancia de Adyacencia Entonces
+            adyacencia <- (Adyacencia) obj
+            DFSRecursivo(adyacencia.obtenerDestino(), visitados)
+        FinSi
+    FinPara
+FinProcedimiento

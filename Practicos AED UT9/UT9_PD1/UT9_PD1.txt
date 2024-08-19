@@ -1,0 +1,15 @@
+1. ¿Cómo se genera un vector monótonamente ascendente?
+Un vector monótonamente ascendente se genera llenando un array de manera que cada elemento es mayor o igual que el anterior. Este proceso puede involucrar un simple bucle for donde se asigna un valor incremental a cada posición del array.
+
+2. ¿Cómo se genera un vector monótonamente descendente?
+De manera similar, un vector monótonamente descendente se genera llenando un array de manera que cada elemento es menor o igual que el anterior. Esto puede lograrse con un bucle `for` decreciendo los valores.
+
+3. ¿Cómo se genera un vector con valores aleatorios? ¿Pueden existir claves repetidas? ¿Cuál es el orden del tiempo de ejecución de este método?
+Para generar un vector con valores aleatorios, se puede utilizar la clase `Random` de Java. Las claves pueden ser repetidas dependiendo de la implementación del generador aleatorio, el tiempo de ejecución de este método es O(n), donde n es el tamaño del vector, porque genera cada número en tiempo constante y lo hace n veces.
+
+4. ¿Cuántos elementos contiene el vector de datos generado? ¿Cómo se puede modificar esta clase para que la cantidad de elementos del vector sea parametrizable?
+El número de elementos del vector generado depende de la implementación específica, pero generalmente se proporciona un parámetro para definir el tamaño del vector. Si no es así, se puede modificar la clase para aceptar un tamaño de vector como parámetro.
+
+5. ¿Cómo podemos verificar que un conjunto está ordenado? ¿Cuál sería el orden del tiempo de ejecución de un algoritmo que lo haga?
+Para verificar que un conjunto está ordenado, se puede recorrer el vector y verificar que cada elemento es menor o igual que el siguiente (en caso de orden ascendente) o mayor o igual que el siguiente (en caso de orden descendente). 
+El orden del tiempo de ejecución de este algoritmo es O(n), ya que requiere una única pasada a través del vector para verificar el orden.

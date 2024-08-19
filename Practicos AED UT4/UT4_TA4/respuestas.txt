@@ -1,0 +1,83 @@
+1)
+a)
+El método lista las hojas de un árbol binario junto con su nivel en el árbol. Comienza desde la raíz del árbol y realiza un recorrido en profundidad (DFS). Cuando encuentra una hoja (un nodo sin hijos izquierdo ni derecho), imprime la etiqueta del nodo junto con su nivel en la consola. El nivel inicialmente es 1 y se incrementa a medida que se desciende en el árbol.
+
+Precondiciones:
+-El arbol debe estar inicializado
+Postcondiciones:
+-Se imprimen en la consola las etiquetas de todas las hojas del arbol junto con su nivel en el arbol.
+
+Casos de prueba:
+-Caso de prueba 1: Árbol vacío
+	Entrada: Árbol binario de búsqueda vacío.
+	Salida esperada: No se imprime nada en la consola.
+-Caso de prueba 2: Árbol con hojas
+	Entrada: Árbol binario de búsqueda con varias hojas.
+	Salida esperada: Se imprime la etiqueta de cada hoja junto con su nivel en la consola.
+
+Seudocodigo:
+Algoritmo listarHojasConNivel()
+    listarHojasConNivel(raiz, 1)
+Fin Algoritmo
+
+Algoritmo listarHojasConNivel(nodo: TElementoAB<T>, nivel: entero)
+    Si nodo ≠ Nulo entonces
+        Si nodo.getHijoIzq() = Nulo y nodo.getHijoDer() = Nulo entonces
+            Escribir("Etiqueta: " + nodo.getEtiqueta() + "| Nivel: " + nivel)
+        Sino
+            listarHojasConNivel(nodo.getHijoIzq(), nivel + 1)
+            listarHojasConNivel(nodo.getHijoDer(), nivel + 1)
+        Fin Si
+    Fin Si
+Fin Algoritmo
+
+Orden: O(n/2)
+
+b)
+El método busca el nivel en el que se encuentra un nodo con una clave específica en un árbol binario. Comienza desde la raíz del árbol y realiza un recorrido en profundidad (DFS). Por cada nodo, compara la clave del nodo con la clave dada. Si encuentra el nodo con la clave dada, devuelve el nivel en el que se encuentra. Si la clave no se encuentra en el subárbol izquierdo del nodo actual, continúa la búsqueda en el subárbol derecho.
+
+Precondiciones:
+-El arbol debe estar inicializado
+-La clave proporcionada debe ser del mismo tipo que las etiquetas del arbol
+Postcondiciones
+-Se devuelv el nivel en el que se encuentra el nodo con la clave especificada. En caso de no encontrarse devuelve -1
+
+Casos de prueba:
+-Caso de prueba 1: Clave no encontrada
+	Entrada: Clave que no existe en el árbol.
+	Salida esperada: -1.
+-Caso de prueba 2: Clave encontrada en la raíz
+	Entrada: Clave que se encuentra en la raíz del árbol.
+	Salida esperada: Nivel de la raíz (generalmente 1).
+-Caso de prueba 3: Clave encontrada en un nivel intermedio
+	Entrada: Clave que se encuentra en un nivel intermedio del árbol.
+	Salida esperada: Nivel en el que se encuentra la clave.
+-Caso de prueba 4: Árbol vacío
+	Entrada: Árbol binario de búsqueda vacío.
+	Salida esperada: -1.
+
+Seudocodigo:
+Algoritmo buscarNivel(clave: Comparable) -> entero
+    Devolver buscarNivel(raiz, clave, 1)
+Fin Algoritmo
+
+Función buscarNivel(nodo: TElementoAB<T>, clave: Comparable, nivel: entero) -> entero
+    Si nodo = Nulo entonces
+        Devolver -1
+    Fin Si
+    
+    Si nodo.getEtiqueta().compareTo(clave) = 0 entonces
+        Devolver nivel
+    Fin Si
+    
+    nivelIzquierdo <- buscarNivel(nodo.getHijoIzq(), clave, nivel + 1)
+    Si nivelIzquierdo ≠ -1 entonces
+        Devolver nivelIzquierdo
+    Fin Si
+    Devolver buscarNivel(nodo.getHijoDer(), clave, nivel + 1)
+Fin Función
+
+Orden: O(log n)
+
+---
+Todos los metodos en java con sus respecticos tests estan en el pd5

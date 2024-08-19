@@ -1,0 +1,2 @@
+En este proyecto están implementados todos los métodos que se piden para los pds de la ut8.
+Tanto para grafos no dirigidos como dirigidos.

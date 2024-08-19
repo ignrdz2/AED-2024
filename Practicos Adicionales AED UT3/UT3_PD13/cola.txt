@@ -1,0 +1,51 @@
+La Cola se define como una estructura de datos que sigue el principio FIFO. Para poder implementarlo se necesitan los siguientes metodos:
+
+encolar(valor): Este método añade un nuevo elemento al final de la lista, siguiendo el principio FIFO, ya que el último elemento añadido a la lista se convierte en el último elemento de la cola.
+
+desencolar(): Este método elimina el primer elemento de la lista, que es el elemento más antiguo añadido a la cola, y devuelve su valor.
+
+frente(): Este método devuelve el valor del primer elemento de la lista, que es el elemento más antiguo añadido a la cola, sin eliminarlo.
+
+estaVacia(): Este método verifica si la lista subyacente está vacía y devuelve true si es así, false en caso contrario.
+
+tamano(): Este método devuelve el número de elementos presentes en la lista subyacente, que es igual al número de elementos en la cola.
+
+public class Cola {
+    private Lista lista;
+
+    public Cola() {
+        this.lista = new Lista();
+    }
+
+    // Método para añadir un elemento al final de la cola
+    public void encolar(int valor) {
+        lista.agregar(valor);  // Agregar al final de la lista para seguir el principio FIFO
+    }
+
+    // Método para eliminar y devolver el elemento más antiguo añadido a la cola
+    public int desencolar() {
+        if (estaVacia()) {
+            throw new IllegalStateException("La cola está vacía");
+        }
+        int valor = lista.eliminarPrimero();  // Eliminar el primer elemento de la lista
+        return valor;
+    }
+
+    // Método para devolver el elemento más antiguo añadido a la cola sin eliminarlo
+    public int frente() {
+        if (estaVacia()) {
+            throw new IllegalStateException("La cola está vacía");
+        }
+        return lista.primero.valor;  // Devolver el primer elemento de la lista
+    }
+
+    // Método para verificar si la cola está vacía
+    public boolean estaVacia() {
+        return lista.estaVacia();
+    }
+
+    // Método para devolver el número de elementos en la cola
+    public int tamano() {
+        return lista.tamano();
+    }
+}

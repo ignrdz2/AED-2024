@@ -1,0 +1,70 @@
+
+
+UNIDAD TEMÁTICA 3: Listas, Pilas y Colas
+
+TRABAJO DE APLICACIÓN 1
+
+Ejercicio #1
+
+
+1. ¿Cuál es el costo de memoria en cada caso? (usando arrays o listas encadenadas)
+
+Costo por Producto
+
+Nombre del Producto (30 caracteres máximo): 30 bytes (aproximadamente, asumiendo 1 byte por carácter).
+
+Código de Identificación del Producto (20 caracteres máximo): 20 bytes.
+
+Precio Unitario: 4 bytes.
+
+Costo Adicional en Listas Encadenadas
+Para las listas encadenadas, hay un costo adicional por cada producto debido al puntero al siguiente nodo:
+
+Puntero al Siguiente Nodo: 4 u 8 bytes (dependiendo de la arquitectura).
+
+Respuesta:
+- Costo de Array 54.
+- Costo de Listas Encadenadas 54 + 4 u 8.
+
+
+2. ¿Cuáles son las consideraciones que tu Equipo haría referentes a la cantidad de
+productos que soporta cada tipo de estructura?
+
+- Los arrays tienen un tamaño fijo definido en el momento de su creación. Esto significa que la cantidad de 
+  productos que pueden soportar está limitada por este tamaño inicial. Si se espera que el inventario de
+  productos sea relativamente estable o se pueda predecir con precisión, los arrays pueden ser una opción adecuada.
+
+- Las listas encadenadas no tienen un tamaño fijo, lo que les permite crecer dinámicamente a medida que se agregan 
+  nuevos productos. Esto las hace ideales para situaciones donde el número de productos es incierto o puede cambiar 
+  significativamente con el tiempo.
+
+3. ¿Cuáles son las consideraciones que tu Equipo haría referentes a la eficiencia de
+las operaciones solicitadas, dependiendo de cada tipo de implementación?
+
+
+Incorporar un Nuevo Producto: 
+
+- Arrays: Agregar un nuevo producto a un array puede ser ineficiente si el array ya ha alcanzado su capacidad máxima, 
+  ya que requeriría la creación de un nuevo array más grande y la copia de todos los elementos existentes al nuevo array. 
+  Sin embargo, si hay espacio disponible, la operación es bastante rápida.
+
+- Listas Encadenadas: Las listas encadenadas permiten la adición de nuevos productos de manera más dinámica, sin la necesidad 
+  de redimensionar la estructura de datos. Esto puede ser más eficiente desde el punto de vista del tiempo de ejecución cuando 
+  se comparan con arrays de tamaño fijo, especialmente en escenarios donde el número de productos varía frecuentemente.
+
+Agregar o Reducir Stock de un Producto Existente:
+
+- Arrays: Modificar el stock de un producto específico requiere buscar primero el producto en el array. Esto puede ser muy rápido 
+  ya que tenemos acceso directo.
+
+- Listas Encadenadas: Similar a los arrays, modificar el stock en una lista encadenada requiere primero encontrar el producto, lo 
+  que implica recorrer la lista desde el inicio hasta encontrar el elemento deseado. Esto siempre es una operación O(n), lo que puede ser 
+  menos eficiente que el acceso directo posible en arrays ordenados o indexados.
+
+Listar Todos los Productos Ordenados por Nombre:
+
+- Arrays: Listar los productos es simplemente recorrer el array.
+- Listas Encadenadas: Listar las listas encadenadse es mas complejo ya que hay que recorrer todo una vez y luego otra para ordenarlo.
+
+
+

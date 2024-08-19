@@ -1,0 +1,55 @@
+Ordena una lista de numeros enteros de menor a mayor
+
+Precondiciones:
+-Lista es una instancia válida del TDA Lista que contiene números enteros.
+
+Postcondiciones:
+-Lista se encuentra ordenada de acuerdo al criterio especificado: los números impares primero de menor a mayor, seguidos de los números pares de menor a mayor.
+
+Seudocodigo:
+Algoritmo OrdenarLista(lista: Lista)
+    // Crear listas auxiliares para códigos impares y pares
+    listaImpar: Lista
+    listaPar: Lista
+    nodoActual: Nodo
+
+    // Recorrer la lista original y separar los elementos en las listas auxiliares
+    nodoActual = lista.PrimerNodo()
+
+    Mientras nodoActual <> NULL
+        Si nodoActual.valor MOD 2 <> 0 Entonces // Es impar
+            listaImpar.AgregarAlFinal(nodoActual.valor)
+        Sino
+            listaPar.AgregarAlFinal(nodoActual.valor)
+        FinSi
+        nodoActual = nodoActual.Siguiente()
+    FinMientras
+
+    // Ordenar las listas auxiliares
+    listaImpar = Ordenar(listaImpar)
+    listaPar = Ordenar(listaPar)
+
+    // Combinar las listas ordenadas en una lista final
+    lista.Vaciar() // Vaciar lista original
+
+    nodoActual = listaImpar.PrimerNodo()
+    Mientras nodoActual <> NULL
+        lista.AgregarAlFinal(nodoActual.valor)
+        nodoActual = nodoActual.Siguiente()
+    FinMientras
+
+    nodoActual = listaPar.PrimerNodo()
+    Mientras nodoActual <> NULL
+        lista.AgregarAlFinal(nodoActual.valor)
+        nodoActual = nodoActual.Siguiente()
+    FinMientras
+FinAlgoritmo
+
+Función Ordenar(lista: Lista) -> Lista
+    // Implementación de un algoritmo de ordenación eficiente, como QuickSort
+    // Devuelve la lista ordenada
+FinFunción
+
+
+Orden de ejecucion:
+O(n log n)

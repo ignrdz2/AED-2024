@@ -1,0 +1,115 @@
+ EJERCICIO 1: Incrementos para ShellSort
+
+ Resumen de Hallazgos
+
+1. Incrementos de Sedgewick (1982): Una secuencia que sigue la fórmula ({1, 5, 19, 41, 109, ...}) basada en (2^i * 3^j).
+   
+2. Incrementos de Tokuda (1992): Una secuencia ({1, 4, 9, 20, 46, 103, ...}) definida como (h_k = ((9 * 9^k) - 4^k)/(5 * 4^k).
+
+3. Incrementos de Ciura (2001): Una secuencia ({1, 4, 10, 23, 57, 132, 301, 701, 1750}) obtenida empíricamente.
+
+ Pruebas de Incrementos
+
+1. Incrementos de Sedgewick:
+   
+   int[] increments = {1, 5, 19, 41, 109};
+   // Implementación de ShellSort con esta secuencia
+   
+
+2. Incrementos de Tokuda:
+   
+   int[] increments = {1, 4, 9, 20, 46, 103};
+   // Implementación de ShellSort con esta secuencia
+   
+
+3. Incrementos de Ciura:
+   
+   int[] increments = {1, 4, 10, 23, 57, 132, 301, 701, 1750};
+   // Implementación de ShellSort con esta secuencia
+   
+
+ EJERCICIO 2: Funciones de Pivote para QuickSort
+
+ Resumen de Hallazgos
+
+1. Mediana de Tres: Seleccionar el pivote como la mediana de los valores en las posiciones primera, central y última del subarreglo.
+
+2. Aleatorio: Seleccionar el pivote de manera aleatoria.
+
+3. Mediana de Cinco: Seleccionar el pivote como la mediana de cinco elementos elegidos aleatoriamente.
+
+ Implementación de Funciones de Pivote
+
+1. Mediana de Tres:
+   
+   int medianOfThree(int[] arr, int low, int high) {
+       int mid = (low + high) / 2;
+       return Math.max(Math.min(arr[low], arr[mid]), Math.min(Math.max(arr[low], arr[mid]), arr[high]));
+   }
+   
+
+2. Aleatorio:
+   
+   int randomPivot(int[] arr, int low, int high) {
+       Random rand = new Random();
+       return arr[low + rand.nextInt(high - low + 1)];
+   }
+   
+
+3. Mediana de Cinco:
+   
+   int medianOfFive(int[] arr, int low, int high) {
+       Random rand = new Random();
+       int[] candidates = new int[5];
+       for (int i = 0; i < 5; i++) {
+           candidates[i] = arr[low + rand.nextInt(high - low + 1)];
+       }
+       Arrays.sort(candidates);
+       return candidates[2];  // La mediana
+   }
+   
+
+ EJERCICIO 3: Algoritmo para Determinar si Dos Conjuntos son Disjuntos
+
+Algoritmo:
+1. Ordena el conjunto más pequeño.
+2. Recorre el conjunto más grande y utiliza búsqueda binaria para verificar si alguno de sus elementos está en el conjunto pequeño.
+
+Pseudocódigo:
+
+boolean areDisjoint(int[] set1, int[] set2) {
+    if (set1.length > set2.length) {
+        return areDisjoint(set2, set1);
+    }
+    Arrays.sort(set1);
+    for (int element : set2) {
+        if (binarySearch(set1, element)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+boolean binarySearch(int[] arr, int key) {
+    int low = 0;
+    int high = arr.length - 1;
+    while (low <= high) {
+        int mid = (low + high) / 2;
+        if (arr[mid] < key) {
+            low = mid + 1;
+        } else if (arr[mid] > key) {
+            high = mid - 1;
+        } else {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+Análisis del Tiempo de Ejecución:
+- Ordenación del conjunto pequeño: (O(m log m))
+- Búsqueda binaria en el conjunto ordenado: (O(n log m))
+- Peor caso: (O(m log m + n log m))
+
+Este enfoque es eficiente especialmente cuando (m) (el tamaño del conjunto más pequeño) es significativamente menor que (n).

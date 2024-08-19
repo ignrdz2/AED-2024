@@ -1,0 +1,11 @@
+1)
+La clase TCaminos sirve como un contenedor para objetos de tipo TCamino. Proporciona las siguientes funcionalidades:
+
+Almacenamiento: Utiliza una Collection (en este caso, un ArrayList) para almacenar múltiples objetos TCamino. Esto te permite gestionar un grupo de objetos TCamino como una sola entidad.
+
+Adición y Eliminación: Proporciona los métodos addCamino y removeCamino para agregar y eliminar objetos TCamino a y de la colección.
+
+Impresión: Proporciona un método imprimir para imprimir los detalles de cada objeto TCamino en la colección. Este método itera sobre cada TCamino en la colección e imprime sus etiquetas utilizando el método imprimirEtiquetas.
+
+2)
+El costo de un camino se calcula sumando los costos de cada arista en el camino. Para hacer esto, se necesita tener una propiedad de costo en la clase TCamino y en la clase TArista.

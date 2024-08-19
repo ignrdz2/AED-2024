@@ -1,0 +1,89 @@
+1)
+a) Es correcta.
+Se establece que el siguiente nodo de 'otroNodo' es 'nodo1', y el siguiente nodo de 'nodo2' es 'nodo3'.
+
+nodo1 -> nodo2 -> nodo3
+ |        |        |
+otroNodo
+
+b) Es incorrecta.
+Para insertar 'otroNodo' entre 'nodo1' y 'nodo2' se tiene que cambiar el siguiente nodo de 'otroNodo' para que apunte a 'nodo2'
+
+otroNodo.siguiente <- nodo2
+
+c) Es correcta.
+'nodo1' apunta directamente a 'nodo3'
+
+d) Es incorrecta.
+Se modifican los punteros de 'otroNodo' y 'nodo2' por lo que se tiene un efecto sobre la lista.
+
+
+2)
+a) Es incorrecta.
+El codigo establece que 'otroNodo' es el siguiente despues de 'nodo1' y el siguiente nodo de 'nodo1' ahora es 'nodo3'
+
+b) Es correcta.
+Para insertar otroNodo entre nodo1 y nodo3, el siguiente nodo de nodo1 debe ser otroNodo.
+
+nodo1 -> otroNodo -> nodo3
+
+c) Es correcta.
+Para eliminar nodo2 de la lista, necesitamos que nodo1 apunte directamente a nodo3.
+
+nodo1 -> nodo3
+
+d) Es incorrecta.
+El código cambia los punteros de otroNodo y nodo1, por lo que definitivamente tiene un efecto sobre la lista. Por lo tanto, esta opción es incorrecta.
+
+
+3)
+a) Es correcta.
+'otroNodo' toma la referencia del siguiente nodo despues de 'nodo1' y luego, 'nodo1' se actualiza para apuntar a 'otroNodo'
+
+nodo1 -> otroNodo -> nodo2 -> nodo3
+
+b) Es correcta.
+El código efectivamente inserta otroNodo entre nodo1 y nodo2, ya que ahora otroNodo apunta al siguiente nodo después de nodo1, y luego nodo1 apunta a otroNodo.
+
+nodo1 -> otroNodo -> nodo2 -> nodo3
+
+c) Es correcta.
+Para eliminar 'nodo2' de la lista se necesita que 'nodo1' apunte directamente a 'nodo3'
+
+nodo1 -> otroNodo -> nodo3
+
+d) Es incorrecta.
+El código proporcionado no dará un error en tiempo de ejecución si nodo1 es el primero o nodo3 es el último. En el caso de que nodo1 sea el primero, otroNodo se insertará correctamente después de nodo1. Si nodo3 es el último, nodo1 simplemente apuntará a otroNodo, eliminando la referencia a nodo2.
+
+
+4)
+a) Es correcta.
+El codigo define un nodo temporal y lo inicializa con el primer nodo de la lista. Luego avanza a traves de la lista hasta llegar al ultimo nodo, para despues establecer a 'nodoActual.siguiente' como 'otroNodo'
+
+nodo1 -> nodo2 -> nodo3 -> ... -> otroNodo
+
+b) Es incorrecta.
+El codigo no inserta 'otroNodo' como el primer nodo.
+
+c) Es incorrecta
+Si la lista está vacía, la variable primero será null al principio. Sin embargo, el código actual verifica primero si nodoActual es null antes de avanzar en el bucle mientras, por lo que no habrá errores en tiempo de ejecución.
+
+d) Es incorrecta.
+El codigo no tiene problemas de tiempo de ejecucion.
+
+
+5)
+a) Es correcta.
+b) Es incorrecta.
+c) Es incorrecta.
+d) Es incorrecta.
+
+
+6)
+a) Por nodo(alumno): 12 bytes en arquitectura de 32bits o 16 bytes en arquitectura de 64bits.
+Total para N alumnos: 12xN en arquitectura de 32bits o 16xN en arquitectura de 64 bits.
+
+b) Capacidad dinamica: permite agregar alumnos sin limites predefinidos.
+Flexibilidad: ideal cuando el numero de alumnos puede variar.
+
+

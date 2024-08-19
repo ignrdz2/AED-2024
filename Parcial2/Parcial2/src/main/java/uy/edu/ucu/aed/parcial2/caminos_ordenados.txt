@@ -1,0 +1,59 @@
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_2 -> Vertice_5 -> Vertice_4 - Costo Total: 131.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_5 -> Vertice_4 - Costo Total: 133.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_2 -> Vertice_9 -> Vertice_4 - Costo Total: 148.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_2 -> Vertice_5 -> Vertice_4 - Costo Total: 167.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_2 -> Vertice_9 -> Vertice_4 - Costo Total: 184.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_2 -> Vertice_9 -> Vertice_5 -> Vertice_4 - Costo Total: 186.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_2 -> Vertice_5 -> Vertice_9 -> Vertice_4 - Costo Total: 187.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_5 -> Vertice_9 -> Vertice_4 - Costo Total: 189.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_2 -> Vertice_10 -> Vertice_5 -> Vertice_4 - Costo Total: 193.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_2 -> Vertice_9 -> Vertice_5 -> Vertice_4 - Costo Total: 222.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_2 -> Vertice_5 -> Vertice_9 -> Vertice_4 - Costo Total: 223.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_2 -> Vertice_5 -> Vertice_4 - Costo Total: 239.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_5 -> Vertice_4 - Costo Total: 241.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_7 -> Vertice_2 -> Vertice_5 -> Vertice_4 - Costo Total: 243.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_2 -> Vertice_10 -> Vertice_5 -> Vertice_9 -> Vertice_4 - Costo Total: 249.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_2 -> Vertice_9 -> Vertice_4 - Costo Total: 256.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_7 -> Vertice_2 -> Vertice_9 -> Vertice_4 - Costo Total: 260.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_2 -> Vertice_5 -> Vertice_1 -> Vertice_4 - Costo Total: 261.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_5 -> Vertice_1 -> Vertice_4 - Costo Total: 263.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_2 -> Vertice_9 -> Vertice_1 -> Vertice_4 - Costo Total: 288.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_2 -> Vertice_9 -> Vertice_5 -> Vertice_4 - Costo Total: 294.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_2 -> Vertice_5 -> Vertice_9 -> Vertice_4 - Costo Total: 295.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_5 -> Vertice_9 -> Vertice_4 - Costo Total: 297.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_2 -> Vertice_5 -> Vertice_1 -> Vertice_4 - Costo Total: 297.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_7 -> Vertice_2 -> Vertice_9 -> Vertice_5 -> Vertice_4 - Costo Total: 298.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_7 -> Vertice_2 -> Vertice_5 -> Vertice_9 -> Vertice_4 - Costo Total: 299.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_2 -> Vertice_9 -> Vertice_1 -> Vertice_5 -> Vertice_4 - Costo Total: 310.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_2 -> Vertice_5 -> Vertice_1 -> Vertice_9 -> Vertice_4 - Costo Total: 311.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_5 -> Vertice_2 -> Vertice_9 -> Vertice_4 - Costo Total: 312.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_5 -> Vertice_1 -> Vertice_9 -> Vertice_4 - Costo Total: 313.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_2 -> Vertice_9 -> Vertice_5 -> Vertice_1 -> Vertice_4 - Costo Total: 316.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_2 -> Vertice_10 -> Vertice_5 -> Vertice_1 -> Vertice_4 - Costo Total: 323.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_2 -> Vertice_9 -> Vertice_1 -> Vertice_4 - Costo Total: 324.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_2 -> Vertice_5 -> Vertice_9 -> Vertice_1 -> Vertice_4 - Costo Total: 327.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_5 -> Vertice_9 -> Vertice_1 -> Vertice_4 - Costo Total: 329.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_2 -> Vertice_9 -> Vertice_1 -> Vertice_5 -> Vertice_4 - Costo Total: 346.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_2 -> Vertice_5 -> Vertice_1 -> Vertice_9 -> Vertice_4 - Costo Total: 347.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_2 -> Vertice_9 -> Vertice_5 -> Vertice_1 -> Vertice_4 - Costo Total: 352.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_2 -> Vertice_5 -> Vertice_9 -> Vertice_1 -> Vertice_4 - Costo Total: 363.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_2 -> Vertice_5 -> Vertice_1 -> Vertice_4 - Costo Total: 369.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_5 -> Vertice_1 -> Vertice_4 - Costo Total: 371.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_2 -> Vertice_10 -> Vertice_5 -> Vertice_1 -> Vertice_9 -> Vertice_4 - Costo Total: 373.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_7 -> Vertice_2 -> Vertice_5 -> Vertice_1 -> Vertice_4 - Costo Total: 373.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_2 -> Vertice_10 -> Vertice_5 -> Vertice_9 -> Vertice_1 -> Vertice_4 - Costo Total: 389.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_2 -> Vertice_9 -> Vertice_1 -> Vertice_4 - Costo Total: 396.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_7 -> Vertice_2 -> Vertice_9 -> Vertice_1 -> Vertice_4 - Costo Total: 400.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_2 -> Vertice_9 -> Vertice_1 -> Vertice_5 -> Vertice_4 - Costo Total: 418.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_2 -> Vertice_5 -> Vertice_1 -> Vertice_9 -> Vertice_4 - Costo Total: 419.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_5 -> Vertice_2 -> Vertice_9 -> Vertice_4 - Costo Total: 420.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_5 -> Vertice_1 -> Vertice_9 -> Vertice_4 - Costo Total: 421.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_7 -> Vertice_2 -> Vertice_9 -> Vertice_1 -> Vertice_5 -> Vertice_4 - Costo Total: 422.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_7 -> Vertice_2 -> Vertice_5 -> Vertice_1 -> Vertice_9 -> Vertice_4 - Costo Total: 423.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_2 -> Vertice_9 -> Vertice_5 -> Vertice_1 -> Vertice_4 - Costo Total: 424.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_7 -> Vertice_2 -> Vertice_9 -> Vertice_5 -> Vertice_1 -> Vertice_4 - Costo Total: 428.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_2 -> Vertice_5 -> Vertice_9 -> Vertice_1 -> Vertice_4 - Costo Total: 435.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_5 -> Vertice_9 -> Vertice_1 -> Vertice_4 - Costo Total: 437.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_7 -> Vertice_2 -> Vertice_5 -> Vertice_9 -> Vertice_1 -> Vertice_4 - Costo Total: 439.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_10 -> Vertice_5 -> Vertice_2 -> Vertice_9 -> Vertice_1 -> Vertice_4 - Costo Total: 452.0
+Origen: Vertice_3 -> uy.edu.ucu.aed.parcial2.TVerticeDeLaRed@682a0b20 -> Vertice_7 -> Vertice_10 -> Vertice_5 -> Vertice_2 -> Vertice_9 -> Vertice_1 -> Vertice_4 - Costo Total: 560.0

@@ -1,0 +1,35 @@
+ Lenguaje Natural:
+
+Recorremos la lista de caracteres, si el corchete en el que estamos ubicados es abierto, se procede a ingresarlo a la Pila, en caso contrario preguntamos si esta se encuentra vacía. De ser así retornamos falso, sino, sacamos el carácter abierto anteriormente ingresado. Después de terminar las iteraciones, verificamos si la pila está vacía, si lo está, retornamos verdadero, sino falso.
+
+Precondiciones:
+	-Recibe una lista de caracteres con la secuencia de corchetes a analizar.
+
+Postcondiciones:
+	-La pila siempre quedará vacía.
+	-Retorna verdadero o falso si es correcta la secuencia.
+
+
+
+función analizadorSintactico(entrada) retorna booleano
+    	crear una pila vacía
+
+    para cada carácter en entrada hacer			O(n)
+        		si el carácter es '{'					O(1)
+            			push('{') en la pila			O(1)
+        		sino si el carácter es '}'				O(1)
+            			si la pila está vacía			O(1)
+                				retorna FALSO
+            	sino
+                				pop() en la pila		O(1)
+	            		fin si
+        		fin si
+    hecho
+
+    	retorna pila esta vacia ()
+fin función
+
+
+El Orden de Ejecución del algoritmo es de O(n). “n” es la cantidad de caracteres que tiene la entrada que le pasamos, ya que vamos a estar recorriendo cada carácter de la entrada.
+
+

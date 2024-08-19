@@ -1,0 +1,44 @@
+Ejercicio 1)
+El método hashCode se utiliza para generar u nvalor hash a partir de un objeto. La implementación predeterminada de hashCode en la clase Object, devuelve el valor de la dirección de memoria del objeto. Dos objetos diferentes tendrán diferentes valores de hashCode incluso si sus contenidos son idénticos.
+
+Integer: Simplemente devuelve el valor del propio número entero. Lo que garantiza que dos objetos Integer con el mismo valor tengan el mismo código hash.
+
+String: Calcula un valor hash basado en los caracteres individuales de la cadena. Lo que permite que dos cadenas con el mismo contenido tengan el mismo código hash, incluso si no son el mismo objeto en memoria.
+
+Ejercicio 2)
+El HashMap calcula un valor hash para la clave utilizando el método hashCode de la clave. Luego, utiliza este valor hash para determinar en que cubo o bucket almacenar el par clave-valor.
+Los cubos son elementos de la matriz interna del HashMap. Cada cubo puede contener varios nodos. Si dos claves tienen el mismo valor hash, se almacenan el mismo cubo. Si hay colisiones, se utiliza una lista enlazada para manejarlas.
+El índice de la matriz se calcula a partir de valor de hash. El índice se obtiene aplicando una función de módulo al valor hash, asegurándose de que esté dentro del rango de la matriz.
+
+
+Insertar "Hola": Calcula el valor hash para cada "Hola", encuentra el cubo correspondiente y almacena el par clave-valor.
+Insertar "HolaMundo": Calcula el valor hash, encuentra el mismo cubo y agrega un nuevo nodo a la lista enlazada.
+Insertar "HashMap": Calcula el valor hash, encuentra un cubo diferente y almacena el par clave-valor.
+Insertar "Colecciones": Calcula el valor hash, encuentra otro cubo y almacena el par clave-valor.
+
+Ejercicio 3)
+Si dos objetos son iguales según el método "equals", deben tener el mismo valor de hashCode.
+Si dos objetos no son iguales según "equals", no necesariamente deben tener diferentes valores de hashCode, pero es recomendable para un mejor rendimiento en las tablas hash.
+
+La clase Alumno quedaria asi:
+
+public class Alumno {
+    private int ID;
+    private String fullName;
+    private String email;
+
+    // Constructor y demás metodos
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Alumno alumno = (Alumno) obj;
+        return ID == alumno.ID && fullName.equals(alumno.fullName) && email.equals(alumno.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return ID; // Se usa el ID como valor de HashCode
+    }
+}

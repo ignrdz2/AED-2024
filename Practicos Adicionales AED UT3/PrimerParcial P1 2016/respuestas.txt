@@ -1,0 +1,64 @@
+1)
+La diferencia simétrica de dos conjuntos se obtiene eliminando los elementos que son comunes a ambos conjuntos y manteniendo los elementos que pertenecen a uno de los conjuntos pero no al otro.
+
+Precondiciones:
+-Ambos conjuntos deben estar implementados como TDA Lista.
+-Los elementos de los conjuntos se distinguen por una etiqueta.
+
+Postcondiciones:
+-Se devuelve un nuevo conjunto que contiene la diferencia simétrica de los conjuntos de entrada.
+
+Seudocódigo:
+Función TipoConjunto.diferenciaSimetrica(TipoConjunto otroConjunto) devuelve TipoConjunto conjuntoDiferencia
+    TipoConjunto conjuntoDiferencia = nuevo TipoConjunto
+    Nodo nodoActual = primerNodo
+    Mientras nodoActual != NULL
+        Si otroConjunto.noContiene(nodoActual.etiqueta)
+            conjuntoDiferencia.agregarElemento(nodoActual.etiqueta)
+        Fin Si
+        nodoActual = nodoActual.siguiente
+    Fin Mientras
+    
+    nodoActual = otroConjunto.primerNodo
+    Mientras nodoActual != NULL
+        Si noContiene(nodoActual.etiqueta)
+            conjuntoDiferencia.agregarElemento(nodoActual.etiqueta)
+        Fin Si
+        nodoActual = nodoActual.siguiente
+    Fin Mientras
+    
+    Devolver conjuntoDiferencia
+Fin Función
+
+
+Orden de Tiempo de Ejecución:
+O(n + m): n es el número de elementos en el primer conjunto y m es el número de elementos en el segundo conjunto.
+
+
+2)
+El complemento de un conjunto A respecto a un conjunto universal U se obtiene tomando los elementos del conjunto U que no están en A.
+
+Precondiciones:
+-Ambos conjuntos deben estar implementados como TDA Lista.
+-Los elementos de los conjuntos se distinguen por una etiqueta.
+
+Postcondiciones:
+-Se devuelve un nuevo conjunto que contiene el complemento del conjunto A respecto al conjunto universal U.
+
+Seudocódigo:
+Función TipoConjunto.complemento(TipoConjunto conjuntoUniversal) devuelve TipoConjunto conjuntoComplemento
+    TipoConjunto conjuntoComplemento = nuevo TipoConjunto
+    Nodo nodoActual = conjuntoUniversal.primerNodo
+    Mientras nodoActual != NULL
+        Si noContiene(nodoActual.etiqueta)
+            conjuntoComplemento.agregarElemento(nodoActual.etiqueta)
+        Fin Si
+        nodoActual = nodoActual.siguiente
+    Fin Mientras
+    
+    Devolver conjuntoComplemento
+Fin Función
+
+
+Orden de Tiempo de Ejecución:
+O(n+m), donde n es el número de elementos en el conjunto universal U y m es el número deelementos en el conjunto A.

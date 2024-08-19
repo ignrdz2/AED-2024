@@ -1,0 +1,49 @@
+1)
+No, yo pac.
+Vos zacata pac.
+Yo pac.
+
+2)
+public class Zumbido {
+public static void desconcertar (String dirigible) {
+System.out.println (dirigible); //4
+sipo ("ping", -5); //5
+}
+public static void sipo (String membrillo, int flag) {
+if (flag < 0) {
+System.out.println (membrillo + " sup"); //6
+} else {
+System.out.println ("ik"); //2
+desconcertar (membrillo); //3
+System.out.println ("muaa-ja-ja-ja"); //7
+}
+}
+public static void main (String[] args) {
+sipo ("traqueteo", 13); //1 
+}
+}
+
+3)
+public static double multsuma(double num1, double num2, double num3){
+	return (num1 * num2) + num3;
+}
+public static void main (String[] args) {
+        System.out.println(multsuma(1.0, 2.0, 3.0));
+}
+
+4) El proyecto del código arreglado está en la carpeta "alumno".
+
+a) Los {} abarcaban mas de lo que debian, moví la clase alumno a un archivo a parte y todo lo demás lo puse dentro de otra clase.
+Ademas, el nombre era nulo, por lo que se asiné un valor para poder utilizar los métodos de la clase.
+b) Las sentencias dentro del for se ejecutaban más veces de las que tenian que ser, además, i deberia empezar en 0 ya que si se usa
+como indice para el metodo charAt(), tiene que empezar por 0. Finalmente el for quedaria asi: for (int i = 0; i < cadena.length(); i++)
+c) El indice es mayor al tamaño del vector, aunque el vector si tiene 8 elementos, hay que recordar que los indices del mismo van del 0 al 7,
+en este caso si se quiere obtener el último valor del vector el indice tendria que ser 7 y no 8.
+d) El índice estaba mal indicado, ya que al ser 1 estaria mostrando el segundo caracter, además no hace falta el uso de un array, solo 
+recibir la palabra deseada al llamar la funcion y retornarla con .charAt(0)
+e) En este caso se estaba intentando convertir un Integer a un String, lo cual no se puede hacer en java, para corregirlo se usa Integer.toString()
+
+5) El proyecto del código hecho está en la carpeta "p1ej5".
+
+
+

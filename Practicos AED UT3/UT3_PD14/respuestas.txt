@@ -1,0 +1,40 @@
+1)
+Se debe agregar un elemento al final de la cola. Si la cola está llena, se debe generar un error indicando que la cola está llena y no se puede agregar más elementos.
+
+Precondiciones:
+La cola tiene espacio disponible para al menos un elemento.
+
+Postcondiciones:
+El elemento se ha agregado al final de la cola.
+
+Seudocódigo:
+Procedimiento PoneEnCola(unElemento)
+    Si (fin + 1) % tamañoVector == inicio
+        Emitir "Error: Cola llena"
+        Devolver
+    Fin Si
+    cola[fin] = unElemento
+    fin = (fin + 1) % tamañoVector
+Fin Procedimiento
+
+
+2)
+Se debe quitar el primer elemento de la cola y devolverlo. Si la cola está vacía, se debe generar un error indicando que la cola está vacía y no se puede quitar más elementos.
+
+Precondiciones:
+La cola no está vacía.
+
+Postcondiciones:
+Se ha eliminado el primer elemento de la cola.
+Se ha devuelto el elemento eliminado.
+
+Seudocódigo:
+Función QuitaDeCola() devuelve unElemento
+    Si inicio == fin
+        Emitir "Error: Cola vacía"
+        Devolver NULL (o un valor indicativo de error)
+    Fin Si
+    unElemento = cola[inicio]
+    inicio = (inicio + 1) % tamañoVector
+    Devolver unElemento
+Fin Función

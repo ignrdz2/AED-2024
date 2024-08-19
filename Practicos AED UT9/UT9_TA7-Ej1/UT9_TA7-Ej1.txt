@@ -1,0 +1,124 @@
+Paso a Paso del Proceso de Ordenación:
+
+Datos iniciales:
+- 5T, 0C, 5U, 0O, 9!, 1N, 8S, 2R, 6A, 4A, 1G, 5L, 6T, 6I, 7O, 7N
+
+Paso 1: Contar las ocurrencias de cada clave:
+
+| Clave | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|-------|---|---|---|---|---|---|---|---|---|---|
+| Conteo| 2 | 2 | 1 | 0 | 1 | 3 | 3 | 2 | 1 | 1 |
+
+Paso 2: Sumar acumuladamente:
+
+| Clave | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|-------|---|---|---|---|---|---|---|---|---|---|
+| Conteo| 2 | 4 | 5 | 5 | 6 | 9 | 12| 14| 15| 16|
+
+Paso 3: Colocar los elementos en su posición final:
+
+1. Empezar desde el último elemento del conjunto original para mantener la estabilidad.
+2. Crear un vector auxiliar donde los elementos se colocarán en la posición determinada por el conteo acumulativo, y reducir el conteo acumulativo en 1 cada vez que se coloque un elemento.
+
+Vector auxiliar final:
+
+- Inicializar con posiciones vacías:
+  
+  [ ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ,  ]
+  
+
+- Colocar los elementos según la posición final determinada:
+  
+  [ 0C, 0O, 1N, 1G, 2R, 4A, 5T, 5U, 5L, 6A, 6T, 6I, 7O, 7N, 8S, 9!]
+  
+
+ Análisis de Comparaciones y Movimientos:
+
+1. Comparaciones:
+   - Counting Sort no realiza comparaciones entre los elementos. El número de comparaciones es 0.
+
+2. Movimientos:
+   - Contar las ocurrencias: O(n) = 16 movimientos.
+   - Sumar acumulativamente: O(k) = 10 movimientos.
+   - Colocar los elementos en la posición final: O(n) = 16 movimientos.
+
+   Total movimientos:
+   - 16 (contar) + 10 (acumular) + 16 (colocar) = 42 movimientos.
+
+ Ordenación por Heapsort:
+
+Paso a Paso:
+
+1. Construir el Heap:
+   - 0 comparaciones y movimientos iniciales.
+   - Convertir el array en un heap.
+   - Comparar y reestructurar el heap para mantener la propiedad de heap.
+
+2. Extraer elementos del Heap:
+   - Comparaciones y movimientos al intercambiar y restaurar la propiedad de heap.
+
+Comparaciones y movimientos para Heapsort:
+
+- Comparaciones: O(n log n) = aproximadamente 4log(16) = 44 = 16 comparaciones.
+- Movimientos: O(n log n) = aproximadamente 16 log(16) = 164 = 64 movimientos.
+
+ Consideraciones sobre la Estabilidad:
+
+- Counting Sort: Es un algoritmo estable porque los elementos con la misma clave se colocan en su orden original relativo.
+- Heapsort: No es un algoritmo estable, ya que los elementos con la misma clave pueden cambiar de orden relativo durante los intercambios y la reestructuración del heap.
+
+ Análisis del Tiempo de Ejecución:
+
+ Pseudocódigo de Counting Sort:
+
+pseudo
+function countingSort(arr, maxVal):
+    count = array of size (maxVal + 1) initialized to 0
+    output = array of size (len(arr))
+    
+    for element in arr:
+        count[element.key] += 1
+    
+    for i from 1 to maxVal:
+        count[i] += count[i - 1]
+    
+    for element in reverse(arr):
+        output[count[element.key] - 1] = element
+        count[element.key] -= 1
+    
+    return output
+
+
+- Contar las ocurrencias: O(n)
+- Sumar acumulativamente: O(k)
+- Colocar los elementos en la posición final: O(n)
+
+Orden total del tiempo de ejecución: O(n + k), donde n es el número de elementos y k es el rango de las claves.
+
+ Implementación en el TClasificador y Medición del Tiempo:
+
+1. Implementar el algoritmo de Counting Sort en el TClasificador.
+2. Usar planillas electrónicas para medir el tiempo de ejecución.
+
+Ejemplo de implementación:
+
+python
+def counting_sort(arr, max_val):
+    count = [0]  (max_val + 1)
+    output = [None]  len(arr)
+    
+    for element in arr:
+        count[element[0]] += 1
+    
+    for i in range(1, max_val + 1):
+        count[i] += count[i - 1]
+    
+    for element in reversed(arr):
+        output[count[element[0]] - 1] = element
+        count[element[0]] -= 1
+    
+    return output
+
+data = [(5, 'T'), (0, 'C'), (5, 'U'), (0, 'O'), (9, '!'), (1, 'N'), (8, 'S'), (2, 'R'), (6, 'A'), (4, 'A'), (1, 'G'), (5, 'L'), (6, 'T'), (6, 'I'), (7, 'O'), (7, 'N')]
+sorted_data = counting_sort(data, 9)
+print(sorted_data)

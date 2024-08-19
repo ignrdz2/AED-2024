@@ -1,0 +1,144 @@
+
+
+UNIDAD TEMÁTICA 2: DISEÑO Y ANÁLISIS DE ALGORITMOS
+
+TRABAJO DE APLICACIÓN 1
+
+Ejercicio #1
+
+Analiza el orden del tiempo de ejecución del siguiente algoritmo, y responde las preguntas
+presentadas en pantalla:
+
+public static int enRango (int[] a, int bajo, int alto) {
+
+int contador = 0;				-> O(1)
+
+for (int i=0; i<a.length; i++) {		-> O(n) n = a.length
+	if (a[i] >= bajo && a[i] < alto)	-> O(2) tiene dos condicionales
+		contador++;			-> O(1)
+	}
+	return contador;			-> O(1)
+}
+
+Orden de ejecución de la función -> O(n)
+
+
+------------------------------------------------------------------------------------------------------------------
+
+Ejercicio #2
+
+Analiza el orden del tiempo de ejecución del siguiente algoritmo, y responde las preguntas
+presentadas en pantalla:
+
+unaFunción ( N de tipo entero)
+ 	i <- 1					-> O(1)
+ 	j <- N					-> O(1)
+ 	mientras i < N hacer			-> O(log(n))
+ 		j <- N – 1			-> O(1)
+ 		i <- i * 2			-> O(1)		la i crece en base 2
+ 	fin mientras
+ 	devolver (j)				-> O(1)
+fin
+
+
+Orden de ejecución de la función -> O(log(n))
+
+
+------------------------------------------------------------------------------------------------------------------
+
+Ejercicio #3
+
+Analiza el orden del tiempo de ejecución del siguiente algoritmo, y responde las preguntas
+presentadas en pantalla:
+
+int[] cuentas = new int [100];			-> O(1)
+for (int i = 0; i<100; i++) {			-> O(1)
+	cuentas[i] = enRango (notas, i, i+1);	-> O(n)
+}
+
+
+Orden de ejecución de la función -> O(n)
+
+
+------------------------------------------------------------------------------------------------------------------
+
+Ejercicio #4
+
+Analiza el orden del tiempo de ejecución del siguiente algoritmo, y responde las preguntas
+presentadas en pantalla:
+
+unValor (A, N de tipos enteros)
+i <- 0								-> O(1)
+Si N < 3 entonces						-> O(1)
+	devolver (A)						-> O(1)
+fin si
+mientras i < 3 hacer						-> O(1)
+	si arreglo[i] = A entonces				-> O(1)
+		devolver ((arreglo[0] + arreglo[N-1]) div 2)	-> O(1)
+	fin si
+	i <- i + 1						-> O(1)
+fin mientras
+devolver (A div N)						-> O(1)
+Fin
+
+Orden de ejecución de la función -> O(1)
+
+------------------------------------------------------------------------------------------------------------------
+
+Ejercicio #5
+
+Analiza el orden del tiempo de ejecución del siguiente algoritmo, y responde las preguntas
+presentadas en pantalla:
+
+otraFunción (claveAbuscar)
+	inicio <- 0								-> O(1)
+	fin <- N-1								-> O(1)
+	mientras inicio ≤ fin hacer						-> O(1)	--------|
+ 		medio <- (inicio + fin) div 2					-> O(1)		|
+ 		si (arreglo[medio] < claveAbuscar) entonces			-> O(1)		|
+ 			inicio <- medio + 1					-> O(1)		|
+ 		sino										|
+ 			si (arreglo[medio] > claveAbuscar) entonces		-> O(1)		-\	O(log(n))
+ 				fin <- medio – 1				-> O(1)		-/	
+ 			sino									|
+ 				devolver medio					-> O(1)		|
+ 			fin si									|
+ 		fin si										|
+	fin mientras									--------|
+	devolver -1								-> O(1)
+fin
+
+Orden de ejecución de la función -> O(log(n))
+
+Respuesta: En cada iteración del bucle, el tamaño del arreglo se reduce a la mitad. Por lo tanto, el orden de tiempo de ejecución va a ser O(log(n))
+
+
+------------------------------------------------------------------------------------------------------------------
+
+Ejercicio #7
+
+Analiza el orden del tiempo de ejecución del siguiente algoritmo, y responde las preguntas
+presentadas en pantalla:
+
+miFunción
+	Desde i = 1 hasta N-1 hacer						-> O(n)
+ 		Desde j = N hasta i+1 hacer					-> O(n)
+ 			Si arreglo[j].clave < arreglo[j-1].clave entonces	-> O(1)
+ 				Intercambia(arreglo[j], arreglo[j-1])		-> O(1)
+ 			Fin si
+ 		Fin desde
+	Fin desde
+Fin
+
+
+Orden de ejecución de la función -> O(n2)
+
+
+
+
+
+
+
+
+
+

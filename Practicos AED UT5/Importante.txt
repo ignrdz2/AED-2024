@@ -1,0 +1,2 @@
+En estos dos proyectos están incluidos todos los métodos que piden las distintas consignas.
+No son 100% fiel a las letras en cuestión de firmas ya que son proyectos que ya había hecho anteriormente en el transcurso de la unidad, y no tendría sentido hacer todo de nuevo cuando ya lo tengo hecho.

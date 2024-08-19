@@ -1,0 +1,66 @@
+1)
+Se debe mezclar dos listas ordenadas en una nueva lista ordenada. El algoritmo debe comparar los elementos de ambas listas y agregarlos a la lista de salida en orden ascendente. Al finalizar, ambas listas de entrada deben quedar vacías.
+
+Precondiciones:
+-Ambas listas deben estar ordenadas de manera ascendente.
+
+Postcondiciones:
+-Se devuelve una lista ordenada que contiene todos los elementos de ambas listas de entrada.
+-Las listas de enetrada quedan vacías.
+
+Seudocódico:
+Función TipoListaOrdenada.mezclarCon(TipoListaOrdenada otraLista) devuelve TipoListaOrdenada listaMezclada
+    TipoListaOrdenada listaMezclada = nueva TipoListaOrdenada
+    Mientras no estén vacías ambas listas
+        Si primer elemento de esta lista <= primer elemento de otraLista
+            Agregar primer elemento de esta lista a listaMezclada
+            Quitar primer elemento de esta lista
+        Sino
+            Agregar primer elemento de otraLista a listaMezclada
+            Quitar primer elemento de otraLista
+        Fin Si
+    Fin Mientras
+    Mientras no esté vacía esta lista
+        Agregar primer elemento de esta lista a listaMezclada
+        Quitar primer elemento de esta lista
+    Fin Mientras
+    Mientras no esté vacía otraLista
+        Agregar primer elemento de otraLista a listaMezclada
+        Quitar primer elemento de otraLista
+    Fin Mientras
+    Devolver listaMezclada
+Fin Función
+
+
+Orden de Tiempo de Ejecución: Lineal (O(n))
+
+2)
+El algoritmo debe recorrer la lista y eliminar cualquier elemento cuya clave ya haya sido encontrada previamente en la lista. Para hacerlo eficientemente, se puede usar una estructura auxiliar, como un conjunto, para verificar rápidamente si una clave ya ha sido vista.
+
+Precondiciones:
+-La lista puede contener elementos duplicados.
+
+Postcondiciones:
+-La lista resultante no contendrá elementos con claves duplicadas.
+
+Seudocódigo:
+Procedimiento TipoLista.eliminarDuplicados()
+    Crear un conjunto (set) auxiliar para almacenar claves únicas
+    Crear un puntero o referencia al nodo actual (nodoActual) y otro al nodo anterior (nodoAnterior)
+    nodoActual = primerNodo
+    nodoAnterior = NULL
+    Mientras nodoActual != NULL
+        Si clave de nodoActual no está en el conjunto
+            Agregar clave de nodoActual al conjunto
+            nodoAnterior = nodoActual
+            nodoActual = nodoActual.siguiente
+        Sino
+            nodoAnterior.siguiente = nodoActual.siguiente
+            nodoActual = nodoActual.siguiente
+        Fin Si
+    Fin Mientras
+Fin Procedimiento
+
+
+Orden de Tiempo de Ejecución:
+Lineal(O(n))

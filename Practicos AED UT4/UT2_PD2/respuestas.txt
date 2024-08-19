@@ -1,0 +1,65 @@
+1)
+i)
+Función factorial(n: entero) -> entero:
+    // Caso base: factorial de 0 es 1
+    Si n == 0 Entonces
+        Devolver 1
+    Fin Si
+    
+    // Caso recursivo: factorial de n es n * factorial de (n - 1)
+    Sino
+        Devolver n * factorial(n - 1)
+    Fin Si
+
+ii) O(n)
+
+iii)
+public class Factorial {
+    public static int factorial(int n) {
+        // Caso base: factorial de 0 es 1
+        if (n == 0) {
+            return 1;
+        }
+        // Caso recursivo: factorial de n es n * factorial de (n - 1)
+        else {
+            return n * factorial(n - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        // Pruebas del algoritmo
+        System.out.println(factorial(4));
+        System.out.println(factorial(5));
+        System.out.println(factorial(0));
+
+        // Verificar el comportamiento con un número negativo
+        System.out.println(factorial(-3));
+    }
+}
+
+Salida:
+Factorial de 4: 24
+Factorial de 5: 120
+Factorial de 0: 1
+Factorial de -3:  entraría en un bucle infinito de llamadas recursivas
+
+2)
+i)
+Función SumaLineal(A: arreglo de enteros, n: entero) -> entero:
+    // Caso base: cuando n es 0, la suma es 0
+    Si n == 0 Entonces
+        Devolver 0
+    Fin Si
+    
+    // Caso recursivo: sumar el último elemento con la suma de los elementos anteriores
+    Sino
+        Devolver A[n - 1] + SumaLineal(A, n - 1)
+    Fin Si
+
+ii) O(n)
+
+iii)
+Para el caso en que el parámetro n sea negativo, el algoritmo simplemente retornará 0, porque no habrá elementos en el arreglo que sumar.
+Para el caso en que el vector A esté vacío, también retornará 0, ya que no habrá elementos en el arreglo para sumar.
+
+

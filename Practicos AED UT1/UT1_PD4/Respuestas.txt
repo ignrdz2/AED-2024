@@ -1,0 +1,56 @@
+1)
+a) aquellas declaradas con el modificador static, en este caso, x
+b) aquellas declaradas sin el modificador static, en este caso, y
+
+
+5
+6
+1
+2
+7 
+
+2)
+El objeto myRect no está correctamente instanciado.
+
+No se le pasan los parametros para calcular el area, se declaran antes
+pero no se llegan a utilizar en ningun momento.
+
+public class Main{
+
+	public static void main(String[] args) {
+        	Rectangle myRect = new Rectangle();
+        	myRect.width = 40;
+        	myRect.height = 50;
+        	System.out.println("myRect's area is " + myRect.area(myRect.width, myRect.height));
+    	}
+}
+
+public class Rectangle {
+    int width;
+    int height;
+
+    public int area(int width, int height){
+        return width * height;
+    }
+}
+
+
+3)
+a) Hay 2 referencias a objetos, 'studens' y 'studentName', aunque depués
+esta última se establece como null
+
+b) Los objetos son destruidos automáticamene por el garbage colector cuando ya no tienen
+ninguna referencia que los apunte. No se puede destruir un objeto manualmente pero se puede
+liberar las referencias al objeto estableciendolas como null.
+
+c) 
+public static void main(String[] args) {
+        NumberHolder numberHolder = new NumberHolder();
+
+        numberHolder.anInt = 32;
+        numberHolder.aFloat = 4.20f;
+
+        System.out.println("anInt: " + numberHolder.anInt);
+        System.out.println("aFloat: " + numberHolder.aFloat);
+}
+

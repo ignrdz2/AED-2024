@@ -1,0 +1,48 @@
+1. Operaciones Básicas Involucradas en "Insertar" y "SuprimeMinimo" en un APO
+
+ Inserción en un APO (Heap Insert)
+1. Agregar el nuevo elemento al final del vector (o en la última posición disponible del árbol).
+2. Subir el elemento (heapify-up) hasta que se mantenga la propiedad del heap:
+   - Comparar el elemento con su padre.
+   - Si el elemento es menor (para un min-heap), intercambiar con el padre.
+   - Repetir hasta que el elemento esté en su lugar correcto o llegue a la raíz.
+
+ Supresión del Mínimo (Heap Extract-Min)
+1. Extraer el elemento mínimo (la raíz del árbol o el primer elemento del vector).
+2. Reemplazar la raíz con el último elemento del vector.
+3. Bajar el elemento (heapify-down) para restaurar la propiedad del heap:
+   - Comparar el elemento con sus hijos.
+   - Si el elemento es mayor que el menor de sus hijos (para un min-heap), intercambiar con ese hijo.
+   - Repetir hasta que el elemento esté en su lugar correcto o sea una hoja.
+
+2. Orden de las Operaciones cuando el APO se representa como un Árbol Binario
+
+ Inserción en un Árbol Binario
+1. Agregar el nuevo elemento al final del árbol:
+   - O(log n) en promedio, ya que se debe encontrar la primera posición disponible en el último nivel.
+2. Subir el elemento (heapify-up):
+   - O(log n) en el peor de los casos, ya que puede ser necesario subir el elemento desde una hoja hasta la raíz.
+
+ Supresión del Mínimo en un Árbol Binario
+1. Extraer el elemento mínimo (la raíz):
+   - O(1) para extraer el elemento.
+2. Reemplazar la raíz con el último elemento:
+   - O(log n) para encontrar y mover el último elemento al frente.
+3. Bajar el elemento (heapify-down):
+   - O(log n) en el peor de los casos, ya que puede ser necesario bajar el elemento desde la raíz hasta una hoja.
+
+3. Orden de las Operaciones cuando el APO se representa mediante un Vector
+
+ Inserción en un Vector
+1. Agregar el nuevo elemento al final del vector:
+   - O(1) ya que simplemente se coloca el elemento en la siguiente posición disponible del vector.
+2. Subir el elemento (heapify-up):
+   - O(log n) en el peor de los casos, ya que puede ser necesario subir el elemento desde la última posición hasta la raíz.
+
+ Supresión del Mínimo en un Vector
+1. Extraer el elemento mínimo (la raíz, primera posición del vector):
+   - O(1) para extraer el primer elemento.
+2. Reemplazar la raíz con el último elemento:
+   - O(1) para mover el último elemento a la primera posición.
+3. Bajar el elemento (heapify-down):
+   - O(log n) en el peor de los casos, ya que puede ser necesario bajar el elemento desde la primera posición hasta una hoja.

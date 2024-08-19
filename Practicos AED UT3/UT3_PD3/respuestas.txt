@@ -1,0 +1,222 @@
+
+a)
+Crear los elementos y la lista
+Lenguaje natural:
+Crear una lista vacía.
+
+Precondiciones:
+Ninguna.
+
+Postcondiciones:
+Se crea una lista vacía.
+
+Seudocódigo:
+
+Lista lista = nueva Lista()
+
+
+b) 
+Insertar un elemento en una lista (al final, la lista no está ordenada)
+
+Lenguaje natural:
+Insertar un nuevo elemento al final de la lista.
+
+Precondiciones:
+La lista debe existir.
+
+Postcondiciones:
+El elemento se agrega al final de la lista.
+
+Seudocódigo:
+
+Insertar(elemento):
+    nodo = nuevo Nodo(elemento)
+    si lista está vacía:
+        lista.primero = nodo
+    sino:
+        nodoActual = lista.primero
+        mientras nodoActual.siguiente no sea null hacer:
+            nodoActual = nodoActual.siguiente
+        fin mientras
+        nodoActual.siguiente = nodo
+
+
+c)
+Buscar un elemento en una lista
+
+Lenguaje natural:
+Buscar un elemento con una clave específica en la lista.
+
+Precondiciones:
+La lista debe existir.
+
+Postcondiciones:
+Se devuelve el nodo con la clave especificada o null si no se encuentra.
+
+Seudocódigo:
+
+Buscar(clave):
+    nodoActual = lista.primero
+    mientras nodoActual no sea null hacer:
+        si nodoActual.clave es igual a clave:
+            devolver nodoActual
+        sino:
+            nodoActual = nodoActual.siguiente
+    fin mientras
+    devolver null
+
+
+d)
+Listar (imprimir) todos los elementos de una lista
+
+Lenguaje natural:
+Imprimir todos los elementos de la lista.
+
+Precondiciones:
+La lista debe existir.
+
+Postcondiciones:
+Se imprimen todos los elementos de la lista.
+
+Seudocódigo:
+
+Listar():
+    nodoActual = lista.primero
+    mientras nodoActual no sea null hacer:
+        imprimir nodoActual.elemento
+        nodoActual = nodoActual.siguiente
+    fin mientras
+
+
+e)
+Eliminar un elemento de una lista, dada su clave.
+
+Lenguaje natural:
+Eliminar un nodo con una clave específica de la lista.
+
+Precondiciones:
+La lista debe existir.
+
+Postcondiciones:
+Se elimina el nodo con la clave especificada si existe.
+
+Seudocódigo:
+
+Eliminar(clave):
+    si lista está vacía:
+        devolver
+    si lista.primero.clave es igual a clave:
+        lista.primero = lista.primero.siguiente
+        devolver
+    nodoActual = lista.primero
+    mientras nodoActual.siguiente no sea null hacer:
+        si nodoActual.siguiente.clave es igual a clave:
+            nodoActual.siguiente = nodoActual.siguiente.siguiente
+            devolver
+        sino:
+            nodoActual = nodoActual.siguiente
+    fin mientras
+
+
+----------------
+Codigo en java
+
+// Clase Nodo
+public class Nodo {
+    int clave;
+    Nodo siguiente;
+
+    public Nodo(int clave) {
+        this.clave = clave;
+        this.siguiente = null;
+    }
+}
+
+// Clase Lista
+public class Lista {
+    Nodo primero;
+
+    public Lista() {
+        this.primero = null;
+    }
+
+    public void Insertar(int clave) {
+        Nodo nodo = new Nodo(clave);
+        if (primero == null) {
+            primero = nodo;
+        } else {
+            Nodo nodoActual = primero;
+            while (nodoActual.siguiente != null) {
+                nodoActual = nodoActual.siguiente;
+            }
+            nodoActual.siguiente = nodo;
+        }
+    }
+
+    public Nodo Buscar(int clave) {
+        Nodo nodoActual = primero;
+        while (nodoActual != null) {
+            if (nodoActual.clave == clave) {
+                return nodoActual;
+            }
+            nodoActual = nodoActual.siguiente;
+        }
+        return null;
+    }
+
+    public void Listar() {
+        Nodo nodoActual = primero;
+        while (nodoActual != null) {
+            System.out.println(nodoActual.clave);
+            nodoActual = nodoActual.siguiente;
+        }
+    }
+
+    public void Eliminar(int clave) {
+        if (primero == null) {
+            return;
+        }
+        if (primero.clave == clave) {
+            primero = primero.siguiente;
+            return;
+        }
+        Nodo nodoActual = primero;
+        while (nodoActual.siguiente != null) {
+            if (nodoActual.siguiente.clave == clave) {
+                nodoActual.siguiente = nodoActual.siguiente.siguiente;
+                return;
+            } else {
+                nodoActual = nodoActual.siguiente;
+            }
+        }
+    }
+}
+
+// Programa principal
+public class Main {
+    public static void main(String[] args) {
+        Lista lista = new Lista();
+        
+        // Insertar elementos
+        lista.Insertar(1);
+        lista.Insertar(2);
+        lista.Insertar(3);
+        
+        // Listar elementos
+        System.out.println("Lista:");
+        lista.Listar();
+        
+        // Buscar elemento
+        Nodo nodoBuscado = lista.Buscar(2);
+        if (nodoBuscado != null) {
+            System.out.println("Elemento encontrado: " + nodoBuscado.clave);
+        } else {
+            System.out.println("Elemento no encontrado");
+        }
+        
+        // Eliminar elemento
+        lista.Eliminar(2);
+        System.out.println("Lista después de eliminar:");
+        lista.Listar();
+    }
+}

@@ -1,0 +1,174 @@
+4) 
+a) Hay que cambiar 'Float.value' por 'Float.valueOf' y
+donde dice (Float.valueOf(args[1])).float(), tendria que terminar en .floatValue()
+
+Con el codigo corregido, la salida para los parámetros 13.4 y 66.1 es:
+a + b = 79.5
+a - b = -52.699997
+a * b = 884.7399
+a / b = 0.20271924
+a % b = 13.4
+
+
+b) Habría que cambiar el 'Float.valueOf' y que pase a usar 'Integer.parseInt' para
+convertir los argumentos a enteros.
+
+5)
+a) 
+3 digitis bedore decimal point.
+2 digits after decimal point
+
+b) 
+dot es la var que almacena la posicion del punto decimal en la cadena
+como el punto decimal en la cadena está en la posicion 3, la salida será 3
+
+s.length() devuelve la longitud de la cadena, se resta dot y 1 para encontrar
+cuántos digitos hay después del punto decimal, como hay 6 caracteres en la cadena(contandoa al punto)
+6 - 3 -1 = 2.
+
+6)
+substring: Devuelve una subcadena de la cadena original, puede ser usado de dos maneras:
+- substring(int beginIndex): Devuelve la subcadena desde beginIndex hasta el final de la cadena.
+- substring(int beginIndex, int endIndex): Devuelve la subcadena desde beginIndex hasta endIndex-1.
+ Ejemplo: 
+   String str = "Hello World";
+   System.out.println(str.substring(6)); // Salida: "World"
+   System.out.println(str.substring(0, 5)); // Salida: "Hello"
+
+split: Divide la cadena en subcadenas basadas en un delimitador dado.
+ Ejemplo:
+ String str = "banana,manzana,naranja";
+ String [] partes = str.split(",");
+ for(String parte : partes){
+	System.out.println(parte);
+ }
+
+subSequence: Devuelve una secuencia de caracteres de la cadena original.
+ Ejemplo:
+ String str = "hola mundo";
+ CharSequence seq = str.subSequence(0, 4);
+ System.out.println(seq); // Salida: ("hola")
+
+trim: Elimina los espacios en blanco al principio y al final de la cadena.
+ Ejemplo:
+ String str = " Hola mundo "
+ System.out.println(str.trim()); // Salida: "Hola mundo"
+
+toLowerCase: Convierte todos los caracteres de la cadena a minusculas.
+ Ejemplo: 
+ String str = "HOLA MUNDO";
+ System.out.println(str.toLowerCase()); // Salida: "hola mundo"
+
+toUpperCase: Convierte todos los caracteres de la cadena a mayusculas
+ Ejemplo: 
+ String str = "hola mundo";
+ System.out.println(str.toUpperCase()); // Salida: "HOLA MUNDO"
+
+indexOf: Devuelve la posicion de la primera ocurrencia de una subcadena dentro de la cadena original.
+ Puede ser usado de varais formas, incluyendo indexOf(int ch), indexOf(int ch, int fromIndex), e indexOf(String str).
+ Ejemplo: 
+ String str = "Hello World";
+ System.out.println(str.indexOf('o')); // Salida: 4
+ System.out.println(str.indexOf('World'));
+
+lastIndexOf: devuelve la posicion de la ultima ocurrencia de una subcadena dentro de la cadena original
+ Ejemplo:
+ String str = "Hello World Hello";
+ System.out.println(str.lastIndexOf('o')); // Salida: 15
+
+contains: Devuelve true si la cadena contiene la subcadena especificada, de lo contrario devuelve false
+ Ejemplo:
+ String str = "Hola Mundo";
+ System.out.println(str.contains("Mundo")); // Salida: True
+
+replace: Reemplaza todas las ocurrencias de un caracter o subcadena por otra especificada
+ Puede tomar como argumentos un caracter o una subcadena.
+ Ejemplo: 
+ String str = "Hola Mundo";
+ System.out.println(str.replace('o', 'a')); // Salida: "Hala Munda"
+ System.out.println(str.replace('Mundo', 'Luna')); // Salida: "Hola Luna"
+
+replaceAll: Reemplaza todas las ocurrencias de una expresion regular por otra cadena especificada
+ Ejemplo: 
+ String str = "Hola Mundo";
+ System.out.println(str.replaceAll('//s', '-')); // Salida: "Hola-Mundo"
+
+replaceFirst: Reemplaza la  primera ocurrencia de una expresion regular por otra cadena especificada
+ Ejemplo: 
+ String str = "Hola Mundo";
+ System.out.println(str.replaceAll('o', 'a')); // Salida: "Hala Munda"
+
+7)
+La clase 'StringBulder' es una clase que permite construir cadenas de caracteres mutables de forma eficiente.
+Permite modificar el contenido de la cadena sin crear un nuevo objeto en cada operacion, lo que puede ser mas 
+eficiente en terminos de rendimiento y consumo de memoria cuando se realizan muchas manipulaciones de cadena.
+
+Constructores:
+StringBuilder(): Crea un StringBuilder vacío con una capacidad inicial predeterminada.
+StringBuilder(int capacity): Crea un StringBuilder con la capacidad inicial especificada.
+StringBuilder(CharSequence seq): Crea un StringBuilder con el contenido de la secuencia de caracteres especificada.
+   Ejemplo:
+   StringBuilder sb1 = new StringBuilder(); // StringBuilder vacío
+   StringBuilder sb2 = new StringBuilder(20); // StringBuilder con capacidad inicial de 20
+   StringBuilder sb3 = new StringBuilder("Hello"); // StringBuilder con contenido "Hello"
+
+setLength: Establece la longitud de la cadena actual. Los caracteres en exceso se eliminan o se agregan nulos en caso
+de ser necesario.
+ Ejemplo:
+ StringBuilder sb = new StringBuilder("Hola");
+ sb.setLength(3);
+ System.out.println(sb); // Salida: "Hol"
+
+ensureCapacity: Asegura que la capacidad del StringBuilder sea almenos igual a la capacidad especificada, en caso de ser
+menor se aumenta automaticamente.
+ Ejemplo: 
+ StringBuilder sb = new StringBuilder();
+ sb.ensureCapacity(20);
+
+append: Agrega el argumento proporcionado al final del StringBuilder
+ Ejemplo: 
+ StringBuilder sb = new StringBuilder("Hola");
+ sb.append("Mundo");
+ System.out.println(sb); // Salida: "Hola Mundo"
+
+insert: inserta el argumento proporcionado en la posicion especificada dentro del StringBuilder.
+ Ejemplo: 
+ StringBuilder sb = new StringBuilder("Hello");
+ sb.insert(5, "World");
+ System.out.println(sb); Salida: "Hello World"
+
+delete: Elimina los caracteres desde la posicion start hasta end-1 del StringBuilder.
+ Ejemplo: 
+ StringBuilder sb = new StringBuilder("Hello World");
+ sb.delete(6, 11);
+ System.out.println(sb); // Salida: "Hello"
+
+deleteCharAt: Elimina el caracter en la posicion especificada dentro del StringBuilder.
+ Ejemplo:
+ StringBuilder sb = new StringBuilder("Hello World");
+ sb.deleteCharAt(5);
+ System.out.println(sb); // Salida: "Hell World"
+
+reverse: Invierte el contenido del StringBuilder
+ Ejemplo: 
+ StringBuilder sb = new StringBuilder("Hello World");
+ sb.reverse();
+ System.out.println(sb); // Salida: "dlroW olleH"
+
+8) La capacidad inicial del StringBuilder se determina por la longitud de la cadena inicial
+mas 16 caracteres, en este caso: 28 + 16 = 44
+
+9) 
+a) la longitud de lla cadena 'hannah',  en este caso 33
+b) el caracter en la pos 12 de la cadena 'hannah', en este caso 's'
+c)
+ int positionOfB = hannah,indexOf('b');
+ char bCharacter = hannah.charAt(positionOfB);
+ System.out.println(bCharacter); // salida: 'b'
+
+10)
+car, de longitud de 3 caracteres.
+
+11) 
+"eh estePro"
+
