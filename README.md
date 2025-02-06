@@ -1,1 +1,1 @@
-"# aed-2024-1-portafolio-ignrdz2" 
+Todo lo tratado en la materia "Algoritmos y Estructuras de Datos".
